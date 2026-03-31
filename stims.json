@@ -1,0 +1,514 @@
+[
+  {
+    "block": 3,
+    "scenario": "vehicles",
+    "header": "One day at the local park, there was a tragic accident involving a pedestrian and a car. Aiming to avoid accidents that could endanger parkgoers or jeopardize their physical integrity, the park administrators established a rule that: “No cars are allowed inside the park”.",
+    "condition": "violation",
+    "continuation": "John is late to work and notices that the only way he can get there in time for an important meeting is by taking a shortcut through the park. He takes the shortcut, making it just in time for his meeting.",
+    "name": "John"
+  },
+  {
+    "block": 1,
+    "scenario": "vehicles",
+    "header": "One day at the local park, there was a tragic accident involving a pedestrian and a car. Aiming to avoid accidents that could endanger parkgoers or jeopardize their physical integrity, the park administrators established a rule that: “No cars are allowed inside the park”.",
+    "condition": "overinclusion",
+    "continuation": "The city's championship-winning team parades in a big limo inside the park to celebrate the title. The limo proceeds very slowly and police scouts on the ground ensure no parkgoer gets too close.",
+    "name": "the team"
+  },
+  {
+    "block": 5,
+    "scenario": "vehicles",
+    "header": "One day at the local park, there was a tragic accident involving a pedestrian and a car. Aiming to avoid accidents that could endanger parkgoers or jeopardize their physical integrity, the park administrators established a rule that: “No cars are allowed inside the park”.",
+    "condition": "overinclusion",
+    "continuation": "The city's championship-winning team parades in a big limo inside the park to celebrate the title. The limo proceeds very slowly and police scouts on the ground ensure no parkgoer gets too close.",
+    "name": "the team"
+  },
+  {
+    "block": 7,
+    "scenario": "vehicles",
+    "header": "One day at the local park, there was a tragic accident involving a pedestrian and a car. Aiming to avoid accidents that could endanger parkgoers or jeopardize their physical integrity, the park administrators established a rule that: “No cars are allowed inside the park”.",
+    "condition": "overinclusion",
+    "continuation": "The city's championship-winning team parades in a big limo inside the park to celebrate the title. The limo proceeds very slowly and police scouts on the ground ensure no parkgoer gets too close.",
+    "name": "the team"
+  },
+  {
+    "block": 4,
+    "scenario": "vehicles",
+    "header": "One day at the local park, there was a tragic accident involving a pedestrian and a car. Aiming to avoid accidents that could endanger parkgoers or jeopardize their physical integrity, the park administrators established a rule that: “No cars are allowed inside the park”.",
+    "condition": "underinclusion",
+    "continuation": "Martha is late to a court appointment. She hops into her motorbike and heads downtown. Halfway through, she realizes that she might get there earlier by taking a shortcut through the park. She enters the park in her motorbike, cutting several minutes off her commute time.",
+    "name": "Martha"
+  },
+  {
+    "block": 6,
+    "scenario": "vehicles",
+    "header": "One day at the local park, there was a tragic accident involving a pedestrian and a car. Aiming to avoid accidents that could endanger parkgoers or jeopardize their physical integrity, the park administrators established a rule that: “No cars are allowed inside the park”.",
+    "condition": "underinclusion",
+    "continuation": "Martha is late to a court appointment. She hops into her motorbike and heads downtown. Halfway through, she realizes that she might get there earlier by taking a shortcut through the park. She enters the park in her motorbike, cutting several minutes off her commute time.",
+    "name": "Martha"
+  },
+  {
+    "block": 8,
+    "scenario": "vehicles",
+    "header": "One day at the local park, there was a tragic accident involving a pedestrian and a car. Aiming to avoid accidents that could endanger parkgoers or jeopardize their physical integrity, the park administrators established a rule that: “No cars are allowed inside the park”.",
+    "condition": "underinclusion",
+    "continuation": "Martha is late to a court appointment. She hops into her motorbike and heads downtown. Halfway through, she realizes that she might get there earlier by taking a shortcut through the park. She enters the park in her motorbike, cutting several minutes off her commute time.",
+    "name": "Martha"
+  },
+  {
+    "block": 2,
+    "scenario": "vehicles",
+    "header": "One day at the local park, there was a tragic accident involving a pedestrian and a car. Aiming to avoid accidents that could endanger parkgoers or jeopardize their physical integrity, the park administrators established a rule that: “No cars are allowed inside the park”.",
+    "condition": "compliance",
+    "continuation": "Joanna walks into the park. She takes a long and relaxing stroll observing the trees and birds.",
+    "name": "Joanna"
+  },
+  {
+    "block": 4,
+    "scenario": "sleep",
+    "header": "A group of people slept on the benches at the train station every night. To avoid use of the station concourse as accommodation or overnight shelter, the station manager established a rule: “No sleeping is allowed on the station benches”.",
+    "condition": "violation",
+    "continuation": "Robert is a homeless person. As the streets are cold and uncomfortable, he goes to the train station, lies down in one of the benches, where he sleeps soundly throughout the night.",
+    "name": "Robert"
+  },
+  {
+    "block": 2,
+    "scenario": "sleep",
+    "header": "A group of people slept on the benches at the train station every night. To avoid use of the station concourse as accommodation or overnight shelter, the station manager established a rule: “No sleeping is allowed on the station benches”.",
+    "condition": "overinclusion",
+    "continuation": "Julia is a businesswoman. She spent all day out of town negotiating important contracts. After a long day of work, Julia sits at one of the benches at the train station to wait for the train home. While waiting, she falls asleep for about 5 minutes, before waking up to the sound of an incoming train.",
+    "name": "Julia"
+  },
+  {
+    "block": 6,
+    "scenario": "sleep",
+    "header": "A group of people slept on the benches at the train station every night. To avoid use of the station concourse as accommodation or overnight shelter, the station manager established a rule: “No sleeping is allowed on the station benches”.",
+    "condition": "overinclusion",
+    "continuation": "Julia is a businesswoman. She spent all day out of town negotiating important contracts. After a long day of work, Julia sits at one of the benches at the train station to wait for the train home. While waiting, she falls asleep for about 5 minutes, before waking up to the sound of an incoming train.",
+    "name": "Julia"
+  },
+  {
+    "block": 8,
+    "scenario": "sleep",
+    "header": "A group of people slept on the benches at the train station every night. To avoid use of the station concourse as accommodation or overnight shelter, the station manager established a rule: “No sleeping is allowed on the station benches”.",
+    "condition": "overinclusion",
+    "continuation": "Julia is a businesswoman. She spent all day out of town negotiating important contracts. After a long day of work, Julia sits at one of the benches at the train station to wait for the train home. While waiting, she falls asleep for about 5 minutes, before waking up to the sound of an incoming train.",
+    "name": "Julia"
+  },
+  {
+    "block": 1,
+    "scenario": "sleep",
+    "header": "A group of people slept on the benches at the train station every night. To avoid use of the station concourse as accommodation or overnight shelter, the station manager established a rule: “No sleeping is allowed on the station benches”.",
+    "condition": "underinclusion",
+    "continuation": "Richard is a homeless person. At the end of the day, he lies down on a bench at the station, resting his head on a makeshift pillow and wrapped in an old blanket. However, Richard never actually sleeps.",
+    "name": "Richard"
+  },
+  {
+    "block": 5,
+    "scenario": "sleep",
+    "header": "A group of people slept on the benches at the train station every night. To avoid use of the station concourse as accommodation or overnight shelter, the station manager established a rule: “No sleeping is allowed on the station benches”.",
+    "condition": "underinclusion",
+    "continuation": "Richard is a homeless person. At the end of the day, he lies down on a bench at the station, resting his head on a makeshift pillow and wrapped in an old blanket. However, Richard never actually sleeps.",
+    "name": "Richard"
+  },
+  {
+    "block": 7,
+    "scenario": "sleep",
+    "header": "A group of people slept on the benches at the train station every night. To avoid use of the station concourse as accommodation or overnight shelter, the station manager established a rule: “No sleeping is allowed on the station benches”.",
+    "condition": "underinclusion",
+    "continuation": "Richard is a homeless person. At the end of the day, he lies down on a bench at the station, resting his head on a makeshift pillow and wrapped in an old blanket. However, Richard never actually sleeps.",
+    "name": "Richard"
+  },
+  {
+    "block": 3,
+    "scenario": "sleep",
+    "header": "A group of people slept on the benches at the train station every night. To avoid use of the station concourse as accommodation or overnight shelter, the station manager established a rule: “No sleeping is allowed on the station benches”.",
+    "condition": "compliance",
+    "continuation": "Veronica is a frequent commuter on a local train. She sits at one of the benches while excitingly talking over the phone with one of her best friends. Before the call is over, her train arrives at the station and she gets onboard.",
+    "name": "Veronica"
+  },
+  {
+    "block": 5,
+    "scenario": "driving",
+    "header": "While driving under the influence of alcohol, a young woman suffered a car accident that ended her life. In order to avoid future accidents, Congress established a law: \"If a police-administered breathalyzer test detects any trace of alcohol, the driver’s vehicle will be seized and the driver subject to imprisonment.\"",
+    "condition": "violation",
+    "continuation": "Mario drinks heavily at a nightclub. He uses his car to go back home. On his way, police stops Mario and he takes a breathalyzer test that detects traces of alcohol.",
+    "name": "Mario"
+  },
+  {
+    "block": 1,
+    "scenario": "driving",
+    "header": "While driving under the influence of alcohol, a young woman suffered a car accident that ended her life. In order to avoid future accidents, Congress established a law: \"If a police-administered breathalyzer test detects any trace of alcohol, the driver’s vehicle will be seized and the driver subject to imprisonment.\"",
+    "condition": "overinclusion",
+    "continuation": "Andrea is late to work. While getting ready as fast as she can, Andrea uses mouthwash that contains alcohol. Despite her tardiness, Andrea drives carefully. On her way, she is stopped by the police. The breathalyzer test detects a small amount of alcohol.",
+    "name": "Andrea"
+  },
+  {
+    "block": 3,
+    "scenario": "driving",
+    "header": "While driving under the influence of alcohol, a young woman suffered a car accident that ended her life. In order to avoid future accidents, Congress established a law: \"If a police-administered breathalyzer test detects any trace of alcohol, the driver’s vehicle will be seized and the driver subject to imprisonment.\"",
+    "condition": "overinclusion",
+    "continuation": "Andrea is late to work. While getting ready as fast as she can, Andrea uses mouthwash that contains alcohol. Despite her tardiness, Andrea drives carefully. On her way, she is stopped by the police. The breathalyzer test detects a small amount of alcohol.",
+    "name": "Andrea"
+  },
+  {
+    "block": 7,
+    "scenario": "driving",
+    "header": "While driving under the influence of alcohol, a young woman suffered a car accident that ended her life. In order to avoid future accidents, Congress established a law: \"If a police-administered breathalyzer test detects any trace of alcohol, the driver’s vehicle will be seized and the driver subject to imprisonment.\"",
+    "condition": "overinclusion",
+    "continuation": "Andrea is late to work. While getting ready as fast as she can, Andrea uses mouthwash that contains alcohol. Despite her tardiness, Andrea drives carefully. On her way, she is stopped by the police. The breathalyzer test detects a small amount of alcohol.",
+    "name": "Andrea"
+  },
+  {
+    "block": 2,
+    "scenario": "driving",
+    "header": "While driving under the influence of alcohol, a young woman suffered a car accident that ended her life. In order to avoid future accidents, Congress established a law: \"If a police-administered breathalyzer test detects any trace of alcohol, the driver’s vehicle will be seized and the driver subject to imprisonment.\"",
+    "condition": "underinclusion",
+    "continuation": "Ursula goes to a party where she makes use of a drug called \"ecstasy\". This drug produces changes in perception and increased physical activity. Ursula does not drink any alcohol at the party, only water. Once the party is over, Ursula gets in her car to return home still under the influence of \"ecstasy\". She is stopped by the police, but the breathalyzer test detects no alcohol.",
+    "name": "Ursula"
+  },
+  {
+    "block": 6,
+    "scenario": "driving",
+    "header": "While driving under the influence of alcohol, a young woman suffered a car accident that ended her life. In order to avoid future accidents, Congress established a law: \"If a police-administered breathalyzer test detects any trace of alcohol, the driver’s vehicle will be seized and the driver subject to imprisonment.\"",
+    "condition": "underinclusion",
+    "continuation": "Ursula goes to a party where she makes use of a drug called \"ecstasy\". This drug produces changes in perception and increased physical activity. Ursula does not drink any alcohol at the party, only water. Once the party is over, Ursula gets in her car to return home still under the influence of \"ecstasy\". She is stopped by the police, but the breathalyzer test detects no alcohol.",
+    "name": "Ursula"
+  },
+  {
+    "block": 8,
+    "scenario": "driving",
+    "header": "While driving under the influence of alcohol, a young woman suffered a car accident that ended her life. In order to avoid future accidents, Congress established a law: \"If a police-administered breathalyzer test detects any trace of alcohol, the driver’s vehicle will be seized and the driver subject to imprisonment.\"",
+    "condition": "underinclusion",
+    "continuation": "Ursula goes to a party where she makes use of a drug called \"ecstasy\". This drug produces changes in perception and increased physical activity. Ursula does not drink any alcohol at the party, only water. Once the party is over, Ursula gets in her car to return home still under the influence of \"ecstasy\". She is stopped by the police, but the breathalyzer test detects no alcohol.",
+    "name": "Ursula"
+  },
+  {
+    "block": 4,
+    "scenario": "driving",
+    "header": "While driving under the influence of alcohol, a young woman suffered a car accident that ended her life. In order to avoid future accidents, Congress established a law: \"If a police-administered breathalyzer test detects any trace of alcohol, the driver’s vehicle will be seized and the driver subject to imprisonment.\"",
+    "condition": "compliance",
+    "continuation": "Lewis drives his car to work after having breakfast and drinking water. He is stopped by the police on his way and takes a breathalyzer test that detects no traces of alcohol.",
+    "name": "Lewis"
+  },
+  {
+    "block": 6,
+    "scenario": "library",
+    "header": "After noticing damage to returned library books, the Figuria University Library created the following rule: “Making notes and scribbling on library-owned books is strictly forbidden”.",
+    "condition": "violation",
+    "continuation": "Laura is a student at Figuria University who likes to doodle funny comic strips. She borrows a biology book from the library. While Laura is studying, she can’t help but draw cartoon figures making fun of biology students. She returns the book with all of her drawings inside.",
+    "name": "Laura"
+  },
+  {
+    "block": 2,
+    "scenario": "library",
+    "header": "After noticing damage to returned library books, the Figuria University Library created the following rule: “Making notes and scribbling on library-owned books is strictly forbidden”.",
+    "condition": "overinclusion",
+    "continuation": "Marcos, a student at Figuria University, borrows some books from the library. To help him study, he takes notes on the page margins. This helps Marcos make connections between important points in his assigned readings. After finishing his study, he meticulously erases all his notes, and returns the books in the same condition he borrowed them in.",
+    "name": "Marcos"
+  },
+  {
+    "block": 4,
+    "scenario": "library",
+    "header": "After noticing damage to returned library books, the Figuria University Library created the following rule: “Making notes and scribbling on library-owned books is strictly forbidden”.",
+    "condition": "overinclusion",
+    "continuation": "Marcos, a student at Figuria University, borrows some books from the library. To help him study, he takes notes on the page margins. This helps Marcos make connections between important points in his assigned readings. After finishing his study, he meticulously erases all his notes, and returns the books in the same condition he borrowed them in.",
+    "name": "Marcos"
+  },
+  {
+    "block": 8,
+    "scenario": "library",
+    "header": "After noticing damage to returned library books, the Figuria University Library created the following rule: “Making notes and scribbling on library-owned books is strictly forbidden”.",
+    "condition": "overinclusion",
+    "continuation": "Marcos, a student at Figuria University, borrows some books from the library. To help him study, he takes notes on the page margins. This helps Marcos make connections between important points in his assigned readings. After finishing his study, he meticulously erases all his notes, and returns the books in the same condition he borrowed them in.",
+    "name": "Marcos"
+  },
+  {
+    "block": 1,
+    "scenario": "library",
+    "header": "After noticing damage to returned library books, the Figuria University Library created the following rule: “Making notes and scribbling on library-owned books is strictly forbidden”.",
+    "condition": "underinclusion",
+    "continuation": "Heather, a student at Figuria University, borrows some books from the library. To help her study, she folds several of the books' pages inward so as to easily return to them later. This creates permanent creases on the books' pages. After finishing his study, she returns the book to the library.",
+    "name": "Heather"
+  },
+  {
+    "block": 3,
+    "scenario": "library",
+    "header": "After noticing damage to returned library books, the Figuria University Library created the following rule: “Making notes and scribbling on library-owned books is strictly forbidden”.",
+    "condition": "underinclusion",
+    "continuation": "Heather, a student at Figuria University, borrows some books from the library. To help her study, she folds several of the books' pages inward so as to easily return to them later. This creates permanent creases on the books' pages. After finishing his study, she returns the book to the library.",
+    "name": "Heather"
+  },
+  {
+    "block": 7,
+    "scenario": "library",
+    "header": "After noticing damage to returned library books, the Figuria University Library created the following rule: “Making notes and scribbling on library-owned books is strictly forbidden”.",
+    "condition": "underinclusion",
+    "continuation": "Heather, a student at Figuria University, borrows some books from the library. To help her study, she folds several of the books' pages inward so as to easily return to them later. This creates permanent creases on the books' pages. After finishing his study, she returns the book to the library.",
+    "name": "Heather"
+  },
+  {
+    "block": 5,
+    "scenario": "library",
+    "header": "After noticing damage to returned library books, the Figuria University Library created the following rule: “Making notes and scribbling on library-owned books is strictly forbidden”.",
+    "condition": "compliance",
+    "continuation": "Peter is a graduate student at Figuria University. He is very interested in philosophy. Peter borrows several books from the library. While reading them, he takes careful notes in a separate notebook. After finishing his study, he returns the books unmarked.",
+    "name": "Peter"
+  },
+  {
+    "block": 7,
+    "scenario": "classroom",
+    "header": "Students who snack during class often drop their food in the classroom. To keep the classrooms clean, the school has decided to ban food in the classroom.",
+    "condition": "violation",
+    "continuation": "George suffers from a dietary disorder and constantly feels the need to snack. During history class, he opens up a chocolate bar. After taking a bite of the chocolate bar, it slips out of George's hands and lands on the classroom floor.",
+    "name": "George"
+  },
+  {
+    "block": 1,
+    "scenario": "classroom",
+    "header": "Students who snack during class often drop their food in the classroom. To keep the classrooms clean, the school has decided to ban food in the classroom.",
+    "condition": "overinclusion",
+    "continuation": "April has diabetes. She is not feeling well in class and must eat something sweet immediately to avoid fainting. April finds a chocolate bar in her purse and takes a bite. She feels better and is able to concentrate on the lesson again.",
+    "name": "April"
+  },
+  {
+    "block": 3,
+    "scenario": "classroom",
+    "header": "Students who snack during class often drop their food in the classroom. To keep the classrooms clean, the school has decided to ban food in the classroom.",
+    "condition": "overinclusion",
+    "continuation": "April has diabetes. She is not feeling well in class and must eat something sweet immediately to avoid fainting. April finds a chocolate bar in her purse and takes a bite. She feels better and is able to concentrate on the lesson again.",
+    "name": "April"
+  },
+  {
+    "block": 5,
+    "scenario": "classroom",
+    "header": "Students who snack during class often drop their food in the classroom. To keep the classrooms clean, the school has decided to ban food in the classroom.",
+    "condition": "overinclusion",
+    "continuation": "April has diabetes. She is not feeling well in class and must eat something sweet immediately to avoid fainting. April finds a chocolate bar in her purse and takes a bite. She feels better and is able to concentrate on the lesson again.",
+    "name": "April"
+  },
+  {
+    "block": 2,
+    "scenario": "classroom",
+    "header": "Students who snack during class often drop their food in the classroom. To keep the classrooms clean, the school has decided to ban food in the classroom.",
+    "condition": "underinclusion",
+    "continuation": "Joan has no interest in math class, so she decides to groom herself instead. She takes a nail clipper and file from her purse and begins to cut and file her fingernails, allowing the clippings to fall onto the classroom floor.",
+    "name": "Joan"
+  },
+  {
+    "block": 4,
+    "scenario": "classroom",
+    "header": "Students who snack during class often drop their food in the classroom. To keep the classrooms clean, the school has decided to ban food in the classroom.",
+    "condition": "underinclusion",
+    "continuation": "Joan has no interest in math class, so she decides to groom herself instead. She takes a nail clipper and file from her purse and begins to cut and file her fingernails, allowing the clippings to fall onto the classroom floor.",
+    "name": "Joan"
+  },
+  {
+    "block": 8,
+    "scenario": "classroom",
+    "header": "Students who snack during class often drop their food in the classroom. To keep the classrooms clean, the school has decided to ban food in the classroom.",
+    "condition": "underinclusion",
+    "continuation": "Joan has no interest in math class, so she decides to groom herself instead. She takes a nail clipper and file from her purse and begins to cut and file her fingernails, allowing the clippings to fall onto the classroom floor.",
+    "name": "Joan"
+  },
+  {
+    "block": 6,
+    "scenario": "classroom",
+    "header": "Students who snack during class often drop their food in the classroom. To keep the classrooms clean, the school has decided to ban food in the classroom.",
+    "condition": "compliance",
+    "continuation": "Joe is a good student who pays attention to all his classes. During history class, he begins to feel hungry. Joe waits until the class is over to eat an apple during recess in the playground.",
+    "name": "Joe"
+  },
+  {
+    "block": 8,
+    "scenario": "shoes",
+    "header": "One day, a guest entered Maria’s house with his shoes on and dirtied the carpet in her living room. In order to keep her house as clean as possible, Maria established that “Wearing shoes in the house is not allowed”.",
+    "condition": "violation",
+    "continuation": "On a rainy day, Joanna walks from her house to Maria’s apartment. She walks inside Maria’s home with her muddy boots on, dirtying Maria’s carpet.",
+    "name": "Joanna"
+  },
+  {
+    "block": 2,
+    "scenario": "shoes",
+    "header": "One day, a guest entered Maria’s house with his shoes on and dirtied the carpet in her living room. In order to keep her house as clean as possible, Maria established that “Wearing shoes in the house is not allowed”.",
+    "condition": "overinclusion",
+    "continuation": "John just bought a brand new pair of dress shoes. In the hallway out front Maria’s apartment, he takes the shoes out of the box for the first time and puts them on. John then walks around Maria’s apartment in his pristine dress shoes.",
+    "name": "John"
+  },
+  {
+    "block": 4,
+    "scenario": "shoes",
+    "header": "One day, a guest entered Maria’s house with his shoes on and dirtied the carpet in her living room. In order to keep her house as clean as possible, Maria established that “Wearing shoes in the house is not allowed”.",
+    "condition": "overinclusion",
+    "continuation": "John just bought a brand new pair of dress shoes. In the hallway out front Maria’s apartment, he takes the shoes out of the box for the first time and puts them on. John then walks around Maria’s apartment in his pristine dress shoes.",
+    "name": "John"
+  },
+  {
+    "block": 6,
+    "scenario": "shoes",
+    "header": "One day, a guest entered Maria’s house with his shoes on and dirtied the carpet in her living room. In order to keep her house as clean as possible, Maria established that “Wearing shoes in the house is not allowed”.",
+    "condition": "overinclusion",
+    "continuation": "John just bought a brand new pair of dress shoes. In the hallway out front Maria’s apartment, he takes the shoes out of the box for the first time and puts them on. John then walks around Maria’s apartment in his pristine dress shoes.",
+    "name": "John"
+  },
+  {
+    "block": 1,
+    "scenario": "shoes",
+    "header": "One day, a guest entered Maria’s house with his shoes on and dirtied the carpet in her living room. In order to keep her house as clean as possible, Maria established that “Wearing shoes in the house is not allowed”.",
+    "condition": "underinclusion",
+    "continuation": "Carlos walks around barefoot unless footwear is strictly necessary. On a rainy day, he walks from his house to Maria’s apartment. Carlos walks into Maria’s home with his feet muddy, dirtying Maria’s carpet.",
+    "name": "Carlos"
+  },
+  {
+    "block": 3,
+    "scenario": "shoes",
+    "header": "One day, a guest entered Maria’s house with his shoes on and dirtied the carpet in her living room. In order to keep her house as clean as possible, Maria established that “Wearing shoes in the house is not allowed”.",
+    "condition": "underinclusion",
+    "continuation": "Carlos walks around barefoot unless footwear is strictly necessary. On a rainy day, he walks from his house to Maria’s apartment. Carlos walks into Maria’s home with his feet muddy, dirtying Maria’s carpet.",
+    "name": "Carlos"
+  },
+  {
+    "block": 5,
+    "scenario": "shoes",
+    "header": "One day, a guest entered Maria’s house with his shoes on and dirtied the carpet in her living room. In order to keep her house as clean as possible, Maria established that “Wearing shoes in the house is not allowed”.",
+    "condition": "underinclusion",
+    "continuation": "Carlos walks around barefoot unless footwear is strictly necessary. On a rainy day, he walks from his house to Maria’s apartment. Carlos walks into Maria’s home with his feet muddy, dirtying Maria’s carpet.",
+    "name": "Carlos"
+  },
+  {
+    "block": 7,
+    "scenario": "shoes",
+    "header": "One day, a guest entered Maria’s house with his shoes on and dirtied the carpet in her living room. In order to keep her house as clean as possible, Maria established that “Wearing shoes in the house is not allowed”.",
+    "condition": "compliance",
+    "continuation": "Laura just bought Maria a present. In the hallway out front Maria’s apartment, she wraps the present in a parcel. Before entering Maria’s apartment, Laura takes off her shoes and walks barefoot around Maria’s apartment.",
+    "name": "Laura"
+  },
+  {
+    "block": 1,
+    "scenario": "environment",
+    "header": "As a result of changing weather, the native flora in Aurontown is disappearing. The environmental committee has initiated a reforestation project to replant native shrubs in the Aurontown National Park, which will gradually restore the regional flora. So people will not damage the native shrubs, park authorities have laid a fence around the reforestation site, and posted signs that say: “No park visitors beyond this point”.",
+    "condition": "violation",
+    "continuation": "Jolene goes for a walk on the paths of the Aurontown National Park and reaches the site of the reforestation project. She skips over the fence, and rips a branch off one of the native shrubs.",
+    "name": "Jolene"
+  },
+  {
+    "block": 3,
+    "scenario": "environment",
+    "header": "As a result of changing weather, the native flora in Aurontown is disappearing. The environmental committee has initiated a reforestation project to replant native shrubs in the Aurontown National Park, which will gradually restore the regional flora. So people will not damage the native shrubs, park authorities have laid a fence around the reforestation site, and posted signs that say: “No park visitors beyond this point”.",
+    "condition": "overinclusion",
+    "continuation": "Anna goes for a walk on the paths of the Aurontown National Park and reaches the site of the reforestation project. Without harming the native shrubs, Anna skips over the fence to take a photo of the sunset.",
+    "name": "Anna"
+  },
+  {
+    "block": 5,
+    "scenario": "environment",
+    "header": "As a result of changing weather, the native flora in Aurontown is disappearing. The environmental committee has initiated a reforestation project to replant native shrubs in the Aurontown National Park, which will gradually restore the regional flora. So people will not damage the native shrubs, park authorities have laid a fence around the reforestation site, and posted signs that say: “No park visitors beyond this point”.",
+    "condition": "overinclusion",
+    "continuation": "Anna goes for a walk on the paths of the Aurontown National Park and reaches the site of the reforestation project. Without harming the native shrubs, Anna skips over the fence to take a photo of the sunset.",
+    "name": "Anna"
+  },
+  {
+    "block": 7,
+    "scenario": "environment",
+    "header": "As a result of changing weather, the native flora in Aurontown is disappearing. The environmental committee has initiated a reforestation project to replant native shrubs in the Aurontown National Park, which will gradually restore the regional flora. So people will not damage the native shrubs, park authorities have laid a fence around the reforestation site, and posted signs that say: “No park visitors beyond this point”.",
+    "condition": "overinclusion",
+    "continuation": "Anna goes for a walk on the paths of the Aurontown National Park and reaches the site of the reforestation project. Without harming the native shrubs, Anna skips over the fence to take a photo of the sunset.",
+    "name": "Anna"
+  },
+  {
+    "block": 2,
+    "scenario": "environment",
+    "header": "As a result of changing weather, the native flora in Aurontown is disappearing. The environmental committee has initiated a reforestation project to replant native shrubs in the Aurontown National Park, which will gradually restore the regional flora. So people will not damage the native shrubs, park authorities have laid a fence around the reforestation site, and posted signs that say: “No park visitors beyond this point”.",
+    "condition": "underinclusion",
+    "continuation": "Lucy goes for a walk on the paths of the Aurontown National Park. After exiting the park, she finds a native shrub growing on the edge of a parking lot, and rips a branch off.",
+    "name": "Lucy"
+  },
+  {
+    "block": 4,
+    "scenario": "environment",
+    "header": "As a result of changing weather, the native flora in Aurontown is disappearing. The environmental committee has initiated a reforestation project to replant native shrubs in the Aurontown National Park, which will gradually restore the regional flora. So people will not damage the native shrubs, park authorities have laid a fence around the reforestation site, and posted signs that say: “No park visitors beyond this point”.",
+    "condition": "underinclusion",
+    "continuation": "Lucy goes for a walk on the paths of the Aurontown National Park. After exiting the park, she finds a native shrub growing on the edge of a parking lot, and rips a branch off.",
+    "name": "Lucy"
+  },
+  {
+    "block": 6,
+    "scenario": "environment",
+    "header": "As a result of changing weather, the native flora in Aurontown is disappearing. The environmental committee has initiated a reforestation project to replant native shrubs in the Aurontown National Park, which will gradually restore the regional flora. So people will not damage the native shrubs, park authorities have laid a fence around the reforestation site, and posted signs that say: “No park visitors beyond this point”.",
+    "condition": "underinclusion",
+    "continuation": "Lucy goes for a walk on the paths of the Aurontown National Park. After exiting the park, she finds a native shrub growing on the edge of a parking lot, and rips a branch off.",
+    "name": "Lucy"
+  },
+  {
+    "block": 8,
+    "scenario": "environment",
+    "header": "As a result of changing weather, the native flora in Aurontown is disappearing. The environmental committee has initiated a reforestation project to replant native shrubs in the Aurontown National Park, which will gradually restore the regional flora. So people will not damage the native shrubs, park authorities have laid a fence around the reforestation site, and posted signs that say: “No park visitors beyond this point”.",
+    "condition": "compliance",
+    "continuation": "Samantha goes for a walk on the paths of the Aurontown national park. After exiting the park, she passes a field of native grasses on her way back to her car. Samantha looks over the field and takes a photo of the sunset.",
+    "name": "Samantha"
+  },
+  {
+    "block": 2,
+    "scenario": "music",
+    "header": "House parties are frequent in the college town of Greenville. The parties cause problems for Greenville residents and families, whose sleep is disturbed. To avoid nuisance to Greenville residents, the city adopted an ordinance: “No loud music past 10 PM”.",
+    "condition": "violation",
+    "continuation": "Brian invites his friends over to party while his parents are away. They hire a DJ and play very loud music until 1 AM.",
+    "name": "Brian"
+  },
+  {
+    "block": 4,
+    "scenario": "music",
+    "header": "House parties are frequent in the college town of Greenville. The parties cause problems for Greenville residents and families, whose sleep is disturbed. To avoid nuisance to Greenville residents, the city adopted an ordinance: “No loud music past 10 PM”.",
+    "condition": "overinclusion",
+    "continuation": "Mark lives in a cul-de-sac, and his only neighbors travel out of town for the long weekend. Mark invites his bandmates to rehearse, realizing the volume will not disturb anyone. The band practices until 1 AM.",
+    "name": "Mark"
+  },
+  {
+    "block": 6,
+    "scenario": "music",
+    "header": "House parties are frequent in the college town of Greenville. The parties cause problems for Greenville residents and families, whose sleep is disturbed. To avoid nuisance to Greenville residents, the city adopted an ordinance: “No loud music past 10 PM”.",
+    "condition": "overinclusion",
+    "continuation": "Mark lives in a cul-de-sac, and his only neighbors travel out of town for the long weekend. Mark invites his bandmates to rehearse, realizing the volume will not disturb anyone. The band practices until 1 AM.",
+    "name": "Mark"
+  },
+  {
+    "block": 8,
+    "scenario": "music",
+    "header": "House parties are frequent in the college town of Greenville. The parties cause problems for Greenville residents and families, whose sleep is disturbed. To avoid nuisance to Greenville residents, the city adopted an ordinance: “No loud music past 10 PM”.",
+    "condition": "overinclusion",
+    "continuation": "Mark lives in a cul-de-sac, and his only neighbors travel out of town for the long weekend. Mark invites his bandmates to rehearse, realizing the volume will not disturb anyone. The band practices until 1 AM.",
+    "name": "Mark"
+  },
+  {
+    "block": 3,
+    "scenario": "music",
+    "header": "House parties are frequent in the college town of Greenville. The parties cause problems for Greenville residents and families, whose sleep is disturbed. To avoid nuisance to Greenville residents, the city adopted an ordinance: “No loud music past 10 PM”.",
+    "condition": "underinclusion",
+    "continuation": "Paul is a light jockey at some of the best clubs in town. To prepare for an upcoming show, one night Paul sets up his laser lights in the front yard and rehearses his show until 1 AM. The lights are so bright that neighbors complain about not being able to sleep.",
+    "name": "Paul"
+  },
+  {
+    "block": 5,
+    "scenario": "music",
+    "header": "House parties are frequent in the college town of Greenville. The parties cause problems for Greenville residents and families, whose sleep is disturbed. To avoid nuisance to Greenville residents, the city adopted an ordinance: “No loud music past 10 PM”.",
+    "condition": "underinclusion",
+    "continuation": "Paul is a light jockey at some of the best clubs in town. To prepare for an upcoming show, one night Paul sets up his laser lights in the front yard and rehearses his show until 1 AM. The lights are so bright that neighbors complain about not being able to sleep.",
+    "name": "Paul"
+  },
+  {
+    "block": 7,
+    "scenario": "music",
+    "header": "House parties are frequent in the college town of Greenville. The parties cause problems for Greenville residents and families, whose sleep is disturbed. To avoid nuisance to Greenville residents, the city adopted an ordinance: “No loud music past 10 PM”.",
+    "condition": "underinclusion",
+    "continuation": "Paul is a light jockey at some of the best clubs in town. To prepare for an upcoming show, one night Paul sets up his laser lights in the front yard and rehearses his show until 1 AM. The lights are so bright that neighbors complain about not being able to sleep.",
+    "name": "Paul"
+  },
+  {
+    "block": 1,
+    "scenario": "music",
+    "header": "House parties are frequent in the college town of Greenville. The parties cause problems for Greenville residents and families, whose sleep is disturbed. To avoid nuisance to Greenville residents, the city adopted an ordinance: “No loud music past 10 PM”.",
+    "condition": "compliance",
+    "continuation": "Josh arrives home at 1AM after a long work trip. He is happy, so he almost inaudibly hums a song as he unlocks his front door.",
+    "name": "Josh"
+  }
+]
