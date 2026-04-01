@@ -1,0 +1,18 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+#vignette {
+  line-height: 1.6;
+}
+
+table {
+  width: 100%;
+}
+
+td {
+  padding: 8px 0;
+}

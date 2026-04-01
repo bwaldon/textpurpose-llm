@@ -1,0 +1,238 @@
+<html>
+
+<head>
+    <title>Rule interpretation experiment</title>
+
+    <!-- external general utilities -->
+    <script src="./_shared/js/jquery-1.11.1.min.js "></script>
+    <script src="./_shared/full-projects/jquery-ui/jquery-ui.min.js"></script>
+    <script src="./_shared/js/underscore-min.js"></script>
+    <script src="https://proliferate.alps.science/static/js/proliferate.js" type="text/javascript"></script>
+
+    <!-- cocolab experiment logic -->
+    <script src="./_shared/js/exp-V2.js"></script>
+    <script src="./_shared/js/stream-V2.js"></script>
+
+    <!-- cocolab general utilities -->
+    <script src="./_shared/js/mmturkey.js "></script>
+    <script src="./_shared/js/browserCheck.js"></script>
+    <script src="./_shared/js/utils.js"></script>
+
+    <!-- CSS -->
+    <link href="./_shared/full-projects/jquery-ui/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
+    <link href="./_shared/css/cocolab-style.css" rel="stylesheet" type="text/css"/>
+    <link href="./css/local-style.css" rel="stylesheet" type="text/css"/>
+
+    <!-- experiment files -->
+    <script src="./js/stimuli.js"></script>
+    <script src="./js/index.js"></script>
+</head>
+
+<body onload="init();">
+  <noscript>This task requires JavaScript.</noscript>
+
+  <!-- SLIDE: Welcome / start -->
+  <div class="slide" id="i0">
+    <br><br>
+    <p id="instruct-text">
+      Welcome! In this study, we are interested in how people interpret rules and whether they think someone has violated a rule.
+      You will read a series of short scenarios and answer a few questions about each. Thanks for participating!
+    </p>
+    <button id="start_button" type="button">Start Experiment</button>
+    <p id="mustaccept" style="color:red; display:none;">Please accept the HIT before starting.</p>
+  </div>
+
+  <!-- SLIDE: Consent form -->
+  <div class="slide" id="consent">
+    <br>
+    <h2>Consent Form</h2>
+    <p>[CONSENT FORM GOES HERE]</p>
+    <button type="button" onclick="_s.button()">I agree &mdash; continue</button>
+  </div>
+
+  <!-- SLIDE: Instructions -->
+  <div class="slide" id="instructions">
+    <br>
+    <h2>Instructions</h2>
+    <p>[INSTRUCTIONS GO HERE]</p>
+    <button type="button" onclick="_s.button()">Continue</button>
+  </div>
+
+  <!-- SLIDE: Trial -->
+  <div class="slide" id="trial">
+    <br>
+
+    <div id="demoView" style="text-align:left; font-family: Arial, Helvetica, sans-serif;">
+      <font color="red"><b>DEMO VIEW</b></font><br>
+      <div id="demoName"></div>
+      <div id="demoCondition"></div>
+    </div>
+
+    <br>
+
+    <div id="vignette" style="text-align:justify; font-family: Arial, Helvetica, sans-serif; background-color:#faeeca; padding:10px; border:5px solid gray;">
+    </div>
+
+    <hr>
+
+    <table style="font-size:18px; width:100%;">
+
+      <tr>
+        <td>
+          <div id="q1_text" style="text-align:left;"></div>
+          <center><br>
+            <label><input type="radio" name="q1" value="yes"/> YES</label>
+            &nbsp;&nbsp;&nbsp;
+            <label><input type="radio" name="q1" value="no"/> NO</label>
+          </center>
+        </td>
+      </tr>
+
+      <tr><td><br></td></tr>
+
+      <tr>
+        <td>
+          <div id="q2_text" style="text-align:left;"></div>
+          <center><br>
+            <label><input type="radio" name="q2" value="yes"/> YES</label>
+            &nbsp;&nbsp;&nbsp;
+            <label><input type="radio" name="q2" value="no"/> NO</label>
+          </center>
+        </td>
+      </tr>
+
+      <tr><td><br></td></tr>
+
+      <tr>
+        <td>
+          <div id="q3_text" style="text-align:left;"></div>
+          <center><br>
+            <label><input type="radio" name="q3" value="yes"/> YES</label>
+            &nbsp;&nbsp;&nbsp;
+            <label><input type="radio" name="q3" value="no"/> NO</label>
+          </center>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <center>
+            <p id="error_msg" style="color:red; display:none;">Please answer all three questions before proceeding.</p>
+          </center>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <center><br>
+            <button id="done_trial" onclick="_s.button_continue()">Continue</button>
+          </center>
+        </td>
+      </tr>
+
+    </table>
+  </div>
+
+  <!-- SLIDE: Debrief / subject info -->
+  <div class="slide" id="subj_info">
+    <div class="long_form">
+      <p><p>
+      <div class="subj_info_title">Additional information</div>
+
+      <p>Answering the following questions is optional, but will help us understand your responses in the study.</p>
+
+      <p>Native language: <input type="text" id="language"/><br>
+      <label>(the language(s) spoken at home when you were a child)</label></p>
+
+      <p>What best describes your legal background?
+      <select id="legaltraining">
+        <option value="-1"></option>
+        <option value="0">No formal legal training and/or law school</option>
+        <option value="1">Some formal legal training and/or law school</option>
+        <option value="2">Professional legal degree (such as a JD or LLM)</option>
+        <option value="3">Practicing lawyer</option>
+      </select>
+      </p>
+
+      <p>Did you read the instructions and do you think you did the experiment correctly?<br>
+      <label><input type="radio" name="assess" value="No"/> No</label>
+      <label><input type="radio" name="assess" value="Yes"/> Yes</label>
+      <label><input type="radio" name="assess" value="Confused"/> I was confused</label></p>
+
+      <p>Were there any problems or bugs in the experiment?</p>
+      <textarea id="problems" rows="2" cols="50"></textarea>
+
+      <p>Gender:
+      <select id="gender">
+        <option value=""></option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other/Prefer not to answer</option>
+      </select>
+      </p>
+
+      <p>Age: <input type="text" id="age"/></p>
+
+      <div id="checkboxes">
+      <p>What is your race/ethnicity? Select all that apply:</p>
+      <ul style="list-style-type:none;" align="center">
+        <li><label><input name="raceX" type="checkbox" id="Asian" value="Asian"/> Asian</label></li>
+        <li><label><input name="raceX" type="checkbox" id="AA" value="AA"/> Black or African American</label></li>
+        <li><label><input name="raceX" type="checkbox" id="Latino" value="Latino"/> Hispanic or Latino</label></li>
+        <li><label><input name="raceX" type="checkbox" id="PI" value="PI"/> Native Hawaiian or Other Pacific Islander</label></li>
+        <li><label><input name="raceX" type="checkbox" id="White" value="White"/> White</label></li>
+      </ul>
+      </div>
+
+      <p>Level of Education:
+      <select id="education">
+        <option value="-1"></option>
+        <option value="0">Some High School</option>
+        <option value="1">Graduated High School</option>
+        <option value="2">Some College</option>
+        <option value="3">Graduated College</option>
+        <option value="4">Hold a higher degree</option>
+      </select>
+      </p>
+
+      <p>Which of the following options do you feel your political beliefs most closely align with?</p>
+      <select id="affiliation">
+        <option value="-1"></option>
+        <option value="0">Liberal Democrat (most liberal)</option>
+        <option value="1">Democratic-leaning Independent</option>
+        <option value="2">Moderate Democrat</option>
+        <option value="3">Independent (most neutral)</option>
+        <option value="4">Moderate Republican</option>
+        <option value="5">Republican-leaning Independent</option>
+        <option value="6">Conservative Republican (most conservative)</option>
+      </select>
+
+      <p>Did you enjoy the experiment?</p>
+      <select id="enjoyment">
+        <option value="-1"></option>
+        <option value="0">No.</option>
+        <option value="1">It was fine.</option>
+        <option value="2">Yes.</option>
+      </select>
+
+      <p>We would be interested in any comments you have about this experiment. Please type them here:</p>
+      <textarea id="comments" rows="3" cols="50"></textarea>
+      <br/><p>
+      <button onclick="_s.button_submit()">Submit</button>
+    </div>
+  </div>
+
+  <div id="thanks" class="slide js">
+    <p class="big">Thanks for your time!</p>
+    Please do not close this window...
+  </div>
+
+  <div class="progress">
+    <span>Progress:</span>
+    <div class="bar-wrapper">
+      <div class="bar" width="0%"></div>
+    </div>
+  </div>
+
+</body>
+</html>
