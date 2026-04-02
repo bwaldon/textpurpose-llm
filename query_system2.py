@@ -216,7 +216,7 @@ def query_huggingface(models: list[str], stims: list[dict]) -> None:
 # Visualize
 # ---------------------------------------------------------------------------
 
-def load_results() -> pd.DataFrame:
+def load_results(model: str | None = None) -> pd.DataFrame:
     dfs = []
     for regime in SYSTEM_PROMPTS:
         subdir = RESULTS_BASE / regime
@@ -231,11 +231,15 @@ def load_results() -> pd.DataFrame:
     data = pd.concat(dfs, ignore_index=True)
     data = data[data["condition"].isin(TARGET_CONDITIONS)].copy()
     data["logprob_diff"] = pd.to_numeric(data["logprob_diff"], errors="coerce")
+    if model:
+        data = data[data["system_name"] == model]
+        if data.empty:
+            raise ValueError(f"No results found for model '{model}'.")
     return data
 
 
-def visualize(output_path: str | None = None) -> None:
-    data = load_results()
+def visualize(output_path: str | None = None, model: str | None = None) -> None:
+    data = load_results(model)
     usable = data[~data["missing"].astype(bool)]
     n_missing = len(data) - len(usable)
 
@@ -334,14 +338,14 @@ def visualize(output_path: str | None = None) -> None:
         plt.show()
 
 
-def visualize_by_scenario(output_dir: str | None = None) -> None:
+def visualize_by_scenario(output_dir: str | None = None, model: str | None = None) -> None:
     """One figure per model, with subplots faceted by scenario.
 
     Each subplot shows log p(YES) − log p(NO) for underinclusion and
     overinclusion side-by-side, with hue = regime (Standard / Ignore irrelevance).
     One data point per bar (no error bars).
     """
-    data = load_results()
+    data = load_results(model)
     usable = data[~data["missing"].astype(bool)].copy()
 
     regime_order = ["standard", "system2"]
@@ -420,7 +424,7 @@ def visualize_by_scenario(output_dir: str | None = None) -> None:
 # CLI
 # ---------------------------------------------------------------------------
 
-def save_effect_table(output_path: str | None = None) -> None:
+def save_effect_table(output_path: str | None = None, model: str | None = None) -> None:
     """Save a CSV with one row per (model, scenario, condition).
 
     Columns:
@@ -430,7 +434,7 @@ def save_effect_table(output_path: str | None = None) -> None:
       manipulation_change — lp_diff_system2 − lp_diff_standard,
       effect             — "increased" | "attenuated" | "no change"
     """
-    data = load_results()
+    data = load_results(model)
     usable = data[~data["missing"].astype(bool)]
 
     # Pivot regimes into columns, keeping (model, scenario, condition) as index
@@ -497,6 +501,10 @@ def main():
         "--scenario-output-dir", default=None, metavar="DIR",
         help="Directory for per-model scenario figures (default: figures/system2-by-scenario/).",
     )
+    parser.add_argument(
+        "--model", default=None, metavar="MODEL",
+        help="Restrict visualization and table to a single model.",
+    )
     args = parser.parse_args()
 
     if not args.viz_only:
@@ -505,9 +513,9 @@ def main():
         models = args.hf_models or HF_MODELS
         query_huggingface(models, stims)
 
-    visualize(args.output)
-    visualize_by_scenario(args.scenario_output_dir)
-    save_effect_table(args.table_output)
+    visualize(args.output, args.model)
+    visualize_by_scenario(args.scenario_output_dir, args.model)
+    save_effect_table(args.table_output, args.model)
 
 
 if __name__ == "__main__":
