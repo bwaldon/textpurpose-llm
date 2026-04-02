@@ -1,0 +1,17 @@
+system_name,scenario,condition,logprob_yes,logprob_no,logprob_diff,missing
+meta-llama/Llama-3.1-8B-Instruct,classroom,overinclusion,-1.1469896675370337,-0.3825134778617515,-0.7644761896752822,False
+meta-llama/Llama-3.1-8B-Instruct,classroom,underinclusion,-0.002124955836533102,-6.158395757038403,6.15627080120187,False
+meta-llama/Llama-3.1-8B-Instruct,driving,overinclusion,-2.463315402616021,-0.08929491976296242,-2.3740204828530587,False
+meta-llama/Llama-3.1-8B-Instruct,driving,underinclusion,-3.062841789640669,-0.04800417120043136,-3.0148376184402377,False
+meta-llama/Llama-3.1-8B-Instruct,environment,overinclusion,-0.0002810730444049409,-8.187803291225784,8.187522218181378,False
+meta-llama/Llama-3.1-8B-Instruct,environment,underinclusion,-0.07431778474738891,-2.6368963082359684,2.5625785234885794,False
+meta-llama/Llama-3.1-8B-Instruct,library,overinclusion,-0.49832357102581837,-0.9361871303113196,0.43786355928550125,False
+meta-llama/Llama-3.1-8B-Instruct,library,underinclusion,-0.04368834051161064,-3.1531244609180047,3.109436120406394,False
+meta-llama/Llama-3.1-8B-Instruct,music,overinclusion,-0.007498658325106854,-4.898200826569811,4.8907021682447045,False
+meta-llama/Llama-3.1-8B-Instruct,music,underinclusion,-0.04302516480683779,-3.168131243319103,3.1251060785122653,False
+meta-llama/Llama-3.1-8B-Instruct,shoes,overinclusion,-0.14071332031801542,-2.031472304691135,1.8907589843731194,False
+meta-llama/Llama-3.1-8B-Instruct,shoes,underinclusion,-0.03807475336133274,-3.2881272183151826,3.25005246495385,False
+meta-llama/Llama-3.1-8B-Instruct,sleep,overinclusion,-5.315489106601324,-0.0049640411391784515,-5.310525065462145,False
+meta-llama/Llama-3.1-8B-Instruct,sleep,underinclusion,-3.4528580353581444,-0.03222915203683922,-3.420628883321305,False
+meta-llama/Llama-3.1-8B-Instruct,vehicles,overinclusion,-0.4509996991737676,-1.0139506639231064,0.5629509647493388,False
+meta-llama/Llama-3.1-8B-Instruct,vehicles,underinclusion,-0.003549969146437067,-5.644203141618661,5.6406531724722235,False

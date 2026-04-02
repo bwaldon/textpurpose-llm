@@ -1,0 +1,17 @@
+system_name,scenario,condition,logprob_yes,logprob_no,logprob_diff,missing
+meta-llama/Llama-3.1-8B-Instruct,classroom,overinclusion,-1.2120744168702682,-0.35354926397254965,-0.8585251528977185,False
+meta-llama/Llama-3.1-8B-Instruct,classroom,underinclusion,-0.027572450870864,-3.6057496820901993,3.5781772312193354,False
+meta-llama/Llama-3.1-8B-Instruct,driving,overinclusion,-2.0853268601003525,-0.13285248749579187,-1.9524743726045606,False
+meta-llama/Llama-3.1-8B-Instruct,driving,underinclusion,-3.4229496925448797,-0.033240499176578495,-3.3897091933683012,False
+meta-llama/Llama-3.1-8B-Instruct,environment,overinclusion,-0.0016801640162648907,-6.392357840602429,6.390677676586164,False
+meta-llama/Llama-3.1-8B-Instruct,environment,underinclusion,-0.4073568488026391,-1.0950455751172243,0.6876887263145852,False
+meta-llama/Llama-3.1-8B-Instruct,library,overinclusion,-0.5232293053366618,-0.8984628351723332,0.3752335298356714,False
+meta-llama/Llama-3.1-8B-Instruct,library,underinclusion,-0.14271891119649674,-2.017814488693579,1.8750955774970821,False
+meta-llama/Llama-3.1-8B-Instruct,music,overinclusion,-0.01417696710389154,-4.264292157300775,4.250115190196884,False
+meta-llama/Llama-3.1-8B-Instruct,music,underinclusion,-0.058351283709090034,-2.8709940549906636,2.8126427712815736,False
+meta-llama/Llama-3.1-8B-Instruct,shoes,overinclusion,-0.3175862609711793,-1.3021195892130937,0.9845333282419144,False
+meta-llama/Llama-3.1-8B-Instruct,shoes,underinclusion,-0.14066093004261176,-2.031409569031545,1.8907486389889332,False
+meta-llama/Llama-3.1-8B-Instruct,sleep,overinclusion,-7.202095670406763,-0.0007583464003675054,-7.201337324006396,False
+meta-llama/Llama-3.1-8B-Instruct,sleep,underinclusion,-5.689548627013419,-0.0034125080943864057,-5.686136118919033,False
+meta-llama/Llama-3.1-8B-Instruct,vehicles,overinclusion,-0.4981962014284375,-0.9360129692855096,0.4378167678570721,False
+meta-llama/Llama-3.1-8B-Instruct,vehicles,underinclusion,-0.01213792850282768,-4.418437612118624,4.406299683615797,False

@@ -1,0 +1,17 @@
+system_name,scenario,condition,logprob_yes,logprob_no,logprob_diff,missing
+meta-llama/Llama-3.2-1B-Instruct,classroom,overinclusion,-1.1368190389243922,-0.3877166251087717,-0.7491024138156205,False
+meta-llama/Llama-3.2-1B-Instruct,classroom,underinclusion,-1.3124587378381907,-0.31414805419631986,-0.9983106836418708,False
+meta-llama/Llama-3.2-1B-Instruct,driving,overinclusion,-1.406203554794312,-0.28152275709770297,-1.124680797696609,False
+meta-llama/Llama-3.2-1B-Instruct,driving,underinclusion,-1.8046468082093794,-0.18014657604006323,-1.624500232169316,False
+meta-llama/Llama-3.2-1B-Instruct,environment,overinclusion,-1.2234327514400967,-0.3489881277359971,-0.8744446237040996,False
+meta-llama/Llama-3.2-1B-Instruct,environment,underinclusion,-0.974146657457439,-0.47470052790640566,-0.49944612955103335,False
+meta-llama/Llama-3.2-1B-Instruct,library,overinclusion,-0.9739430564388376,-0.4746167724741632,-0.49932628396467443,False
+meta-llama/Llama-3.2-1B-Instruct,library,underinclusion,-1.136448556068536,-0.3875857331595154,-0.7488628229090206,False
+meta-llama/Llama-3.2-1B-Instruct,music,overinclusion,-1.5016991530797792,-0.2525692012538449,-1.2491299518259342,False
+meta-llama/Llama-3.2-1B-Instruct,music,underinclusion,-1.4053754008578796,-0.2820166413960851,-1.1233587594617944,False
+meta-llama/Llama-3.2-1B-Instruct,shoes,overinclusion,-1.5008727368753576,-0.25255336318590305,-1.2483193736894544,False
+meta-llama/Llama-3.2-1B-Instruct,shoes,underinclusion,-1.6993595340011345,-0.20227630044135014,-1.4970832335597843,False
+meta-llama/Llama-3.2-1B-Instruct,sleep,overinclusion,-1.1366049914161838,-0.38775625183168944,-0.7488487395844943,False
+meta-llama/Llama-3.2-1B-Instruct,sleep,underinclusion,-1.4055377848534567,-0.2823484886206728,-1.1231892962327839,False
+meta-llama/Llama-3.2-1B-Instruct,vehicles,overinclusion,-1.5994713936694651,-0.2264132498963997,-1.3730581437730653,False
+meta-llama/Llama-3.2-1B-Instruct,vehicles,underinclusion,-1.2229035179402388,-0.34926947791908186,-0.8736340400211569,False

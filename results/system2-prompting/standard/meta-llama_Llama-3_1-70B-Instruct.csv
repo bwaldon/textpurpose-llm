@@ -1,0 +1,17 @@
+system_name,scenario,condition,logprob_yes,logprob_no,logprob_diff,missing
+meta-llama/Llama-3.1-70B-Instruct,classroom,overinclusion,-1.665891029324692e-05,-10.999960902772463,10.999944243862169,False
+meta-llama/Llama-3.1-70B-Instruct,classroom,underinclusion,-6.5014755684372965,-0.0015023139505985904,-6.499973254486698,False
+meta-llama/Llama-3.1-70B-Instruct,driving,overinclusion,-2.1430608465251393e-05,-10.749982257612665,10.7499608270042,False
+meta-llama/Llama-3.1-70B-Instruct,driving,underinclusion,-17.87470046484406,-2.803595770352008e-08,-17.8747004368081,False
+meta-llama/Llama-3.1-70B-Instruct,environment,overinclusion,-5.076760393244342e-08,-17.374513931184847,17.374513880417243,False
+meta-llama/Llama-3.1-70B-Instruct,environment,underinclusion,-15.624832635928204,-1.3899587375715198e-07,-15.62483249693233,False
+meta-llama/Llama-3.1-70B-Instruct,library,overinclusion,3.7560311457440345e-08,-17.49966650097574,17.49966653853605,False
+meta-llama/Llama-3.1-70B-Instruct,library,underinclusion,-7.846917256543253e-06,-11.74987638047837,11.749868533561113,False
+meta-llama/Llama-3.1-70B-Instruct,music,overinclusion,-1.0455288244280629e-06,-13.749664442660915,13.74966339713209,False
+meta-llama/Llama-3.1-70B-Instruct,music,underinclusion,-14.49965355961508,-5.35885984570112e-07,-14.499653023729095,False
+meta-llama/Llama-3.1-70B-Instruct,shoes,overinclusion,-4.546124741318142e-05,-10.000031545857839,9.999986084610425,False
+meta-llama/Llama-3.1-70B-Instruct,shoes,underinclusion,-4.2641386195372855,-0.014163926346415867,-4.24997469319087,False
+meta-llama/Llama-3.1-70B-Instruct,sleep,overinclusion,-2.9125420789661643e-07,-14.999771374055882,14.999771082801674,False
+meta-llama/Llama-3.1-70B-Instruct,sleep,underinclusion,-0.5759359965170001,-0.8259440955246633,0.2500080990076632,False
+meta-llama/Llama-3.1-70B-Instruct,vehicles,overinclusion,7.567145437531963e-08,-17.874090440894857,17.874090516566312,False
+meta-llama/Llama-3.1-70B-Instruct,vehicles,underinclusion,-0.029750307137109876,-3.5297576534609645,3.5000073463238546,False

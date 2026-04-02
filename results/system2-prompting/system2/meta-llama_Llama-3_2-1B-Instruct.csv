@@ -1,0 +1,17 @@
+system_name,scenario,condition,logprob_yes,logprob_no,logprob_diff,missing
+meta-llama/Llama-3.2-1B-Instruct,classroom,overinclusion,-1.5008632627921896,-0.25282427019841297,-1.2480389925937767,False
+meta-llama/Llama-3.2-1B-Instruct,classroom,underinclusion,-1.500724503491627,-0.2529373537661052,-1.2477871497255217,False
+meta-llama/Llama-3.2-1B-Instruct,driving,overinclusion,-2.1261589952639226,-0.1273168164460488,-1.9988421788178738,False
+meta-llama/Llama-3.2-1B-Instruct,driving,underinclusion,-1.7013654640224225,-0.2017858030329142,-1.4995796609895082,False
+meta-llama/Llama-3.2-1B-Instruct,environment,overinclusion,-1.3129920062308584,-0.3140243958886236,-0.9989676103422349,False
+meta-llama/Llama-3.2-1B-Instruct,environment,underinclusion,-1.3128499272929568,-0.3139203724715241,-0.9989295548214328,False
+meta-llama/Llama-3.2-1B-Instruct,library,overinclusion,-1.2232037009376517,-0.3489412334542529,-0.8742624674833989,False
+meta-llama/Llama-3.2-1B-Instruct,library,underinclusion,-1.3128047697191199,-0.31388895220653323,-0.9989158175125866,False
+meta-llama/Llama-3.2-1B-Instruct,music,overinclusion,-1.5999391742188092,-0.22593268230334854,-1.3740064919154606,False
+meta-llama/Llama-3.2-1B-Instruct,music,underinclusion,-1.8035166203172668,-0.18039825301517057,-1.6231183673020961,False
+meta-llama/Llama-3.2-1B-Instruct,shoes,overinclusion,-1.6993227157617696,-0.2021343076094326,-1.497188408152337,False
+meta-llama/Llama-3.2-1B-Instruct,shoes,underinclusion,-1.6991136567251401,-0.2022462367767917,-1.4968674199483485,False
+meta-llama/Llama-3.2-1B-Instruct,sleep,overinclusion,-1.312548589153833,-0.3142960022211204,-0.9982525869327127,False
+meta-llama/Llama-3.2-1B-Instruct,sleep,underinclusion,-1.5007816650472785,-0.2528809542853027,-1.2479007107619757,False
+meta-llama/Llama-3.2-1B-Instruct,vehicles,overinclusion,-1.8031367372267708,-0.18062298974556865,-1.6225137474812021,False
+meta-llama/Llama-3.2-1B-Instruct,vehicles,underinclusion,-1.5008830235339647,-0.2527872989541426,-1.248095724579822,False
