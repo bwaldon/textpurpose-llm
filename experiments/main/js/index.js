@@ -1,6 +1,7 @@
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const demoMode = !(urlParams.get('demoMode') == undefined);
+const debugMode = urlParams.get('debug') !== null;
 
 function make_slides(f) {
   var slides = {};
@@ -143,7 +144,9 @@ function make_slides(f) {
         "trials": exp.data_trials,
         "system": exp.system,
         "subject_information": exp.subj_data,
-        "time_in_minutes": (Date.now() - exp.startT) / 60000
+        "time_in_minutes": (Date.now() - exp.startT) / 60000,
+        "tab_switches": exp.tab_switches,
+        "cursor_departs": exp.cursor_departs
       };
       turk.submit(exp.data);
     }
@@ -155,6 +158,24 @@ function make_slides(f) {
 
 function init() {
   exp.data_trials = [];
+
+  // Integrity tracking
+  exp.tab_switches = 0;
+  exp.cursor_departs = 0;
+
+  document.addEventListener('visibilitychange', function() {
+    if (document.hidden) {
+      exp.tab_switches++;
+      if (debugMode) $("#debug_tab_switches").text(exp.tab_switches);
+    }
+  });
+
+  document.addEventListener('mouseleave', function() {
+    exp.cursor_departs++;
+    if (debugMode) $("#debug_cursor_departs").text(exp.cursor_departs);
+  });
+
+  if (debugMode) $("#debug_overlay").show();
 
   // Between-subjects condition assignment
   exp.prediction_condition = Math.random() < 0.5 ? 'llm' : 'human';

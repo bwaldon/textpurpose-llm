@@ -31,6 +31,11 @@
 <body onload="init();">
   <noscript>This task requires JavaScript.</noscript>
 
+  <div id="debug_overlay" style="display:none; position:fixed; top:8px; left:8px; z-index:9999; background:rgba(0,0,0,0.75); color:#fff; font-family:monospace; font-size:13px; padding:6px 10px; border-radius:4px; pointer-events:none;">
+    Tab switches: <span id="debug_tab_switches">0</span><br>
+    Cursor departs: <span id="debug_cursor_departs">0</span>
+  </div>
+
   <!-- SLIDE: Welcome / start -->
   <div class="slide" id="i0">
     <br><br>
