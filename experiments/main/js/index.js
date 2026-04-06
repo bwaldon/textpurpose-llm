@@ -36,20 +36,26 @@ function make_slides(f) {
 
       $("#vignette").html( stim.header + "<p>" + stim.continuation);
 
-      $("#q1_text").html("1. Make a decision: did <b>" + stim.name + "</b> violate the rule (YES) or not (NO)?");
+      $("#q1_text").html("Make a decision: did <b>" + stim.name + "</b> violate the rule (YES) or not (NO)?");
 
       // Show the prediction question text based on condition
       if (exp.prediction_condition === 'human') {
-        $("#q2_text").html("2. What answer will the majority of other experiment participants give to Question 1?");
+        $("#q2_text").html("What answer will the majority of other experiment participants give to the above question?");
       } else {
-        $("#q2_text").html("2. What answer will the AI chatbot give to Question 1?");
+        $("#q2_text").html("What answer will the AI chatbot give to the above question?");
       }
 
       // Reset radio buttons
       $('input[name="q1"]').prop('checked', false);
       $('input[name="q2"]').prop('checked', false);
 
-      $("#error_msg").hide();
+      // Show q1 section first; hide prediction section
+      this.q1_response = null;
+      $("#q1_section").show();
+      $("#prediction_section").hide();
+
+      $("#error_msg_q1").hide();
+      $("#error_msg_q2").hide();
 
       if (!demoMode) {
         $("#demoView").hide();
@@ -59,17 +65,32 @@ function make_slides(f) {
       }
     },
 
-    button_continue: function() {
+    button_q1_continue: function() {
       var q1 = $('input[name="q1"]:checked').val();
-      var prediction = $('input[name="q2"]:checked').val();
 
-      if (q1 === undefined || prediction === undefined) {
-        $("#error_msg").show();
+      if (q1 === undefined) {
+        $("#error_msg_q1").show();
         return;
       }
 
-      $("#error_msg").hide();
-      this.log_responses(q1, prediction);
+      this.q1_response = q1;
+      var q1_label = q1.toUpperCase();
+      var q1_text = $("#q1_text").html();
+      $("#q1_recap").html(q1_text + "<br><br><b>Your answer:</b> " + q1_label);
+      $("#q1_section").hide();
+      $("#prediction_section").show();
+    },
+
+    button_continue: function() {
+      var prediction = $('input[name="q2"]:checked').val();
+
+      if (prediction === undefined) {
+        $("#error_msg_q2").show();
+        return;
+      }
+
+      $("#error_msg_q2").hide();
+      this.log_responses(this.q1_response, prediction);
       _stream.apply(this);
     },
 

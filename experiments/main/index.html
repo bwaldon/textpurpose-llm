@@ -75,6 +75,7 @@
 
     <hr>
 
+    <div id="q1_section">
     <table style="font-size:18px; width:100%;">
 
       <tr>
@@ -88,7 +89,28 @@
         </td>
       </tr>
 
-      <tr><td><br></td></tr>
+      <tr>
+        <td>
+          <center>
+            <p id="error_msg_q1" style="color:red; display:none;">Please answer the question before proceeding.</p>
+          </center>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <center>
+            <button onclick="_s.button_q1_continue()">Continue</button>
+          </center>
+        </td>
+      </tr>
+
+    </table>
+    </div>
+
+    <div id="prediction_section" style="display:none;">
+    <div id="q1_recap" style="font-size:18px; text-align:left; background-color:#f0f0f0; padding:8px; margin-bottom:10px;"></div>
+    <table style="font-size:18px; width:100%;">
 
       <tr>
         <td>
@@ -101,25 +123,24 @@
         </td>
       </tr>
 
-      <tr><td><br></td></tr>
-
       <tr>
         <td>
           <center>
-            <p id="error_msg" style="color:red; display:none;">Please answer both questions before proceeding.</p>
+            <p id="error_msg_q2" style="color:red; display:none;">Please answer the question before proceeding.</p>
           </center>
         </td>
       </tr>
 
       <tr>
         <td>
-          <center><br>
+          <center>
             <button id="done_trial" onclick="_s.button_continue()">Continue</button>
           </center>
         </td>
       </tr>
 
     </table>
+    </div>
   </div>
 
   <!-- SLIDE: Debrief / subject info -->
