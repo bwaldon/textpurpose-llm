@@ -37,13 +37,17 @@ function make_slides(f) {
       $("#vignette").html( stim.header + "<p>" + stim.continuation);
 
       $("#q1_text").html("1. Make a decision: did <b>" + stim.name + "</b> violate the rule (YES) or not (NO)?");
-      $("#q2_text").html("2. What answer will the majority of other experiment participants give to Question 1?");
-      $("#q3_text").html("3. What answer will the AI chatbot give to Question 1?");
 
-      // Reset all radio buttons
+      // Show the prediction question text based on condition
+      if (exp.prediction_condition === 'human') {
+        $("#q2_text").html("2. What answer will the majority of other experiment participants give to Question 1?");
+      } else {
+        $("#q2_text").html("2. What answer will the AI chatbot give to Question 1?");
+      }
+
+      // Reset radio buttons
       $('input[name="q1"]').prop('checked', false);
       $('input[name="q2"]').prop('checked', false);
-      $('input[name="q3"]').prop('checked', false);
 
       $("#error_msg").hide();
 
@@ -57,24 +61,23 @@ function make_slides(f) {
 
     button_continue: function() {
       var q1 = $('input[name="q1"]:checked').val();
-      var q2 = $('input[name="q2"]:checked').val();
-      var q3 = $('input[name="q3"]:checked').val();
+      var prediction = $('input[name="q2"]:checked').val();
 
-      if (q1 === undefined || q2 === undefined || q3 === undefined) {
+      if (q1 === undefined || prediction === undefined) {
         $("#error_msg").show();
         return;
       }
 
       $("#error_msg").hide();
-      this.log_responses(q1, q2, q3);
+      this.log_responses(q1, prediction);
       _stream.apply(this);
     },
 
-    log_responses: function(q1, q2, q3) {
+    log_responses: function(q1, prediction) {
       exp.data_trials.push({
         "individual_judgment": q1,
-        "majority_prediction": q2,
-        "ai_prediction": q3,
+        "prediction": prediction,
+        "prediction_condition": exp.prediction_condition,
         "scenario": this.stim.scenario,
         "condition": this.stim.condition,
         "name": this.stim.name,
@@ -131,6 +134,9 @@ function make_slides(f) {
 
 function init() {
   exp.data_trials = [];
+
+  // Between-subjects condition assignment
+  exp.prediction_condition = Math.random() < 0.5 ? 'llm' : 'human';
 
   // Build one trial per scenario with balanced conditions
   // 8 scenarios, 4 conditions => 2 per condition
