@@ -121,7 +121,7 @@ function make_slides(f) {
         "subject_information": exp.subj_data,
         "time_in_minutes": (Date.now() - exp.startT) / 60000
       };
-      proliferate.submit(exp.data);
+      turk.submit(exp.data);
     }
   });
 
