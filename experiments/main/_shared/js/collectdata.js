@@ -58,7 +58,7 @@ var collectdata = {
     $("#uploading-text").show();
     $("#thanks-text").hide();
 
-    $.post("savedata.php", {
+    $.post("/savedata.php", {
       "data": JSON.stringify(expdata),
       "experiment_id": experiment_id,
       "participant_id": participant_id
