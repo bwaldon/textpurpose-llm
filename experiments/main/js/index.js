@@ -148,7 +148,7 @@ function make_slides(f) {
         "tab_switches": exp.tab_switches,
         "cursor_departs": exp.cursor_departs
       };
-      turk.submit(exp.data);
+      collectdata.submit(exp.data);
     }
   });
 
@@ -221,12 +221,7 @@ function init() {
   $('.slide').hide();
 
   $("#start_button").click(function() {
-    if (turk.previewMode) {
-      $("#mustaccept").show();
-    } else {
-      $("#start_button").click(function() { $("#mustaccept").show(); });
-      exp.go();
-    }
+    exp.go();
   });
 
   exp.go();
