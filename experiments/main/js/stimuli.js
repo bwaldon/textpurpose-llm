@@ -1,258 +1,450 @@
 var stimuli = [
   {
-    "block": 6,
-    "scenario": "classroom",
-    "header": "Students who snack during class often drop their food in the classroom. To keep the classrooms clean, the school has decided to ban food in the classroom.",
-    "condition": "compliance",
-    "continuation": "Joe is a good student who pays attention to all his classes. During history class, he begins to feel hungry. Joe waits until the class is over to eat an apple during recess in the playground.",
+    "scenario": "pool",
+    "header": "Following a series of slip-and-fall injuries at the community recreation center, the facility posted the following rule: \"No running is permitted on the pool deck at any time.\"",
+    "condition": "overinclusion",
+    "continuation": "Lily is a certified swim instructor. To demonstrate a kicking technique to a student, she briefly jogs alongside the pool edge, moving briskly but in full control of her footing on the non-slip surface.",
+    "name": "Lily"
+  },
+  {
+    "scenario": "pool",
+    "header": "Following a series of slip-and-fall injuries at the community recreation center, the facility posted the following rule: \"No running is permitted on the pool deck at any time.\"",
+    "condition": "underinclusion",
+    "continuation": "Owen is visiting the pool with friends. He walks briskly around the wet pool deck while scrolling through his phone, not watching where he is going, and nearly loses his footing on the slick tiles several times.",
+    "name": "Owen"
+  },
+  {
+    "scenario": "hospital_visit",
+    "header": "To ensure patients receive adequate rest during their recovery, Lakeview Hospital established the rule: \"No visitors are permitted in patient rooms after 9 PM.\"",
+    "condition": "overinclusion",
+    "continuation": "Donna is a family friend of the patient. She arrives at 9:15 PM, receives a quiet wave-in from the patient who is still awake, places a get-well card on the bedside table, and leaves within two minutes without making any noise or disturbing the patient's rest.",
+    "name": "Donna"
+  },
+  {
+    "scenario": "hospital_visit",
+    "header": "To ensure patients receive adequate rest during their recovery, Lakeview Hospital established the rule: \"No visitors are permitted in patient rooms after 9 PM.\"",
+    "condition": "underinclusion",
+    "continuation": "Ted is visiting his father who is recovering from surgery. After 9 PM, Ted waits in the corridor directly outside his father's open room door, speaking loudly on a video call for over an hour and preventing the patient and others nearby from sleeping.",
+    "name": "Ted"
+  },
+  {
+    "scenario": "smoking",
+    "header": "Following a fire caused by an unattended cigarette in a stairwell, Riverside Apartments management introduced the following rule: \"All smoking of any kind is prohibited inside the building and within ten feet of any entrance.\"",
+    "condition": "overinclusion",
+    "continuation": "Fiona uses a nicotine-free herbal aromatherapy stick in her apartment. The device produces a faint, pleasant scent but involves no combustion and presents no fire hazard.",
+    "name": "Fiona"
+  },
+  {
+    "scenario": "smoking",
+    "header": "Following a fire caused by an unattended cigarette in a stairwell, Riverside Apartments management introduced the following rule: \"All smoking of any kind is prohibited inside the building and within ten feet of any entrance.\"",
+    "condition": "underinclusion",
+    "continuation": "Greg regularly burns multiple scented candles simultaneously in his apartment and frequently leaves them unattended while he moves to other rooms, creating a persistent fire risk and filling shared hallways with smoke.",
+    "name": "Greg"
+  },
+  {
+    "scenario": "museum_photo",
+    "header": "To protect light-sensitive artworks from deterioration, the City Fine Arts Museum established the following rule: \"Photography of any kind is strictly prohibited inside the exhibition halls.\"",
+    "condition": "overinclusion",
+    "continuation": "Nina photographs the ornate ceiling architecture of the exhibition hall using her phone with the flash disabled. None of her photographs include any artworks on display.",
+    "name": "Nina"
+  },
+  {
+    "scenario": "museum_photo",
+    "header": "To protect light-sensitive artworks from deterioration, the City Fine Arts Museum established the following rule: \"Photography of any kind is strictly prohibited inside the exhibition halls.\"",
+    "condition": "underinclusion",
+    "continuation": "Ben visits the museum and wants a closer look at a 19th-century watercolor. Without taking any photographs, he uses his phone's brightest flashlight setting to illuminate the painting from just a few inches away for several minutes.",
+    "name": "Ben"
+  },
+  {
+    "scenario": "cinema",
+    "header": "To allow all patrons to enjoy films without interruption, Grand Cinema adopted the rule: \"Mobile phones must be switched off or fully silenced during all screenings.\"",
+    "condition": "overinclusion",
+    "continuation": "Iris is a physician on call. After feeling her phone vibrate once, she silently checks a single urgent text message \u2014 screen at its lowest brightness setting \u2014 then immediately stows the phone away for the rest of the film.",
+    "name": "Iris"
+  },
+  {
+    "scenario": "cinema",
+    "header": "To allow all patrons to enjoy films without interruption, Grand Cinema adopted the rule: \"Mobile phones must be switched off or fully silenced during all screenings.\"",
+    "condition": "underinclusion",
+    "continuation": "Dean does not use his phone during the film, but he loudly narrates the plot to his companion throughout the entire screening, making it impossible for viewers around him to hear the dialogue.",
+    "name": "Dean"
+  },
+  {
+    "scenario": "cafeteria",
+    "header": "To maintain hygiene standards and food safety compliance, Meadows Hospital cafeteria posted the following sign: \"No outside food or beverages are permitted inside the cafeteria.\"",
+    "condition": "overinclusion",
+    "continuation": "Rose is a patient joining her family for a meal. She brings a factory-sealed bottle of water from her room into the cafeteria to drink with her lunch.",
+    "name": "Rose"
+  },
+  {
+    "scenario": "cafeteria",
+    "header": "To maintain hygiene standards and food safety compliance, Meadows Hospital cafeteria posted the following sign: \"No outside food or beverages are permitted inside the cafeteria.\"",
+    "condition": "underinclusion",
+    "continuation": "Hank is a visitor at the hospital. He eats a home-cooked meal \u2014 including raw shellfish \u2014 at a table in the open corridor immediately adjacent to the cafeteria's food preparation area, posing a contamination risk to the kitchen.",
+    "name": "Hank"
+  },
+  {
+    "scenario": "fire_lane",
+    "header": "To ensure fire trucks and ambulances can access the building without obstruction, Maple Grove Shopping Center posted the following rule: \"No stopping or parking in the fire lane at any time.\"",
+    "condition": "overinclusion",
+    "continuation": "Cora is making a delivery. She stops her van in the fire lane for under 30 seconds to drop a single small parcel at the entrance doors, then immediately drives away.",
+    "name": "Cora"
+  },
+  {
+    "scenario": "fire_lane",
+    "header": "To ensure fire trucks and ambulances can access the building without obstruction, Maple Grove Shopping Center posted the following rule: \"No stopping or parking in the fire lane at any time.\"",
+    "condition": "underinclusion",
+    "continuation": "Bart parks his truck in a legal spot directly beside a fire hydrant and unloads large pieces of furniture that completely block the hydrant from view and access for over two hours.",
+    "name": "Bart"
+  },
+  {
+    "scenario": "recycling",
+    "header": "To prevent contamination of recyclable materials, Elmwood City Waste Department posted the following directive: \"Only approved recyclables may be placed in the blue recycling bin.\"",
+    "condition": "overinclusion",
+    "continuation": "Gail places a clean cardboard pizza box in the recycling bin. There is a small grease smudge on one corner, but the box is otherwise undamaged and unsoiled.",
+    "name": "Gail"
+  },
+  {
+    "scenario": "recycling",
+    "header": "To prevent contamination of recyclable materials, Elmwood City Waste Department posted the following directive: \"Only approved recyclables may be placed in the blue recycling bin.\"",
+    "condition": "underinclusion",
+    "continuation": "Walt carefully sorts all his approved recyclables into the blue bin but does not rinse any of the containers beforehand. The food residue left inside his cans, jars, and bottles attracts pests and causes contamination that renders an entire batch of collected materials non-recyclable at the processing facility.",
+    "name": "Walt"
+  },
+  {
+    "scenario": "water",
+    "header": "During a severe drought, the town of Cedar Falls issued the following emergency directive: \"The use of lawn sprinklers and automatic irrigation systems is prohibited from June 1 through September 30.\"",
+    "condition": "overinclusion",
+    "continuation": "Vera runs her automatic drip irrigation timer each morning throughout the restriction period, watering her vegetable garden exclusively from a rain barrel she filled during a storm the previous spring, drawing nothing from the municipal water supply.",
+    "name": "Vera"
+  },
+  {
+    "scenario": "water",
+    "header": "During a severe drought, the town of Cedar Falls issued the following emergency directive: \"The use of lawn sprinklers and automatic irrigation systems is prohibited from June 1 through September 30.\"",
+    "condition": "underinclusion",
+    "continuation": "Norm installs a large decorative garden fountain in his front yard that runs continuously throughout the summer, consuming the same volume of water per day as a full sprinkler cycle.",
+    "name": "Norm"
+  },
+  {
+    "scenario": "dress_code",
+    "header": "To maintain a professional image with clients, Hargreaves Law Firm implemented the following policy: \"All attorneys and staff must wear formal business attire while in the office.\"",
+    "condition": "overinclusion",
+    "continuation": "Wren arrives at the office wearing an immaculate, well-fitted dark athletic tracksuit that appears polished and professional to visiting clients.",
+    "name": "Wren"
+  },
+  {
+    "scenario": "dress_code",
+    "header": "To maintain a professional image with clients, Hargreaves Law Firm implemented the following policy: \"All attorneys and staff must wear formal business attire while in the office.\"",
+    "condition": "underinclusion",
+    "continuation": "Kent arrives at a client presentation wearing a business suit but appears visibly unkempt \u2014 shirt untucked, jacket rumpled, and hair uncombed \u2014 creating an unprofessional impression on visiting clients.",
+    "name": "Kent"
+  },
+  {
+    "scenario": "bicycle_path",
+    "header": "To prevent dangerous collisions between cyclists and pedestrians, the city parks authority erected signs along the route: \"The marked bicycle path is for cyclists only. Pedestrians must use the adjacent footway.\"",
+    "condition": "overinclusion",
+    "continuation": "Bea is a jogger who runs along the clearly marked bike path early on a weekend morning when the path is completely empty of cyclists, staying to the far right edge at all times.",
+    "name": "Bea"
+  },
+  {
+    "scenario": "bicycle_path",
+    "header": "To prevent dangerous collisions between cyclists and pedestrians, the city parks authority erected signs along the route: \"The marked bicycle path is for cyclists only. Pedestrians must use the adjacent footway.\"",
+    "condition": "underinclusion",
+    "continuation": "Finn rides his electric scooter \u2014 capable of reaching 25 mph \u2014 along the pedestrian footway rather than the bike path, weaving between walkers and startling several elderly visitors.",
+    "name": "Finn"
+  },
+  {
+    "scenario": "fishing",
+    "header": "To protect local fish populations and regulate catches, the State Wildlife Authority mandated the following requirement: \"A valid fishing license must be displayed by all persons fishing in state-designated waters.\"",
+    "condition": "overinclusion",
+    "continuation": "Earl is a retired fisherman who wades into a state-designated river near his property and spends the afternoon casting his line without a license. He practices strict catch-and-release, returning every fish unharmed to the water immediately after landing it, and removes nothing from the river.",
+    "name": "Earl"
+  },
+  {
+    "scenario": "fishing",
+    "header": "To protect local fish populations and regulate catches, the State Wildlife Authority mandated the following requirement: \"A valid fishing license must be displayed by all persons fishing in state-designated waters.\"",
+    "condition": "underinclusion",
+    "continuation": "Todd releases a bag of live invasive predatory fish into a public river, where they rapidly outcompete and consume the native fish population over the following weeks.",
+    "name": "Todd"
+  },
+  {
+    "scenario": "campfire",
+    "header": "Due to critically low humidity and extreme wildfire danger, Redwood National Forest issued the following directive: \"No campfires, bonfires, or open flames of any kind are permitted in the forest during the fire danger period.\"",
+    "condition": "overinclusion",
+    "continuation": "Tess uses a compact backpacking stove with an open burner to boil water for her morning coffee. She sets it on a flat rock, shields it from wind with her body, and monitors it continuously. The small, controlled flame produces no embers and poses no risk of igniting the surrounding underbrush.",
+    "name": "Tess"
+  },
+  {
+    "scenario": "campfire",
+    "header": "Due to critically low humidity and extreme wildfire danger, Redwood National Forest issued the following directive: \"No campfires, bonfires, or open flames of any kind are permitted in the forest during the fire danger period.\"",
+    "condition": "underinclusion",
+    "continuation": "Clint is hiking along a forest trail during the fire danger period. He finishes a cigarette and tosses the still-smoldering butt into the dry underbrush beside the path.",
+    "name": "Clint"
+  },
+  {
+    "scenario": "beach_alcohol",
+    "header": "After a series of incidents caused by intoxicated beachgoers, the city council passed the following ordinance: \"No alcoholic beverages are permitted on the public beach.\"",
+    "condition": "overinclusion",
+    "continuation": "Pam is meeting a friend at the beach to hand off a sealed bottle of wine she agreed to drop off as a birthday gift. She carries it in her tote bag, transfers it immediately on arrival, and does not open or consume any alcohol during her visit.",
+    "name": "Pam"
+  },
+  {
+    "scenario": "beach_alcohol",
+    "header": "After a series of incidents caused by intoxicated beachgoers, the city council passed the following ordinance: \"No alcoholic beverages are permitted on the public beach.\"",
+    "condition": "underinclusion",
+    "continuation": "Dex and a group of friends bring alcohol-infused gummies to the beach. They consume them throughout the afternoon and by midday are loudly intoxicated, disturbing nearby families.",
+    "name": "Dex"
+  },
+  {
+    "scenario": "dog_leash",
+    "header": "After several complaints about dogs knocking over children and elderly visitors, Cedarwood Park Commission introduced the following rule: \"All dogs must be kept on a leash no longer than six feet while in the park.\"",
+    "condition": "overinclusion",
+    "continuation": "Ruth is a certified guide dog trainer who walks her fully trained assistance dog off-leash in the park while conducting a recall training session. The dog remains within two feet of her at all times.",
+    "name": "Ruth"
+  },
+  {
+    "scenario": "dog_leash",
+    "header": "After several complaints about dogs knocking over children and elderly visitors, Cedarwood Park Commission introduced the following rule: \"All dogs must be kept on a leash no longer than six feet while in the park.\"",
+    "condition": "underinclusion",
+    "continuation": "Cole keeps his large, powerful dog on a standard five-foot leash, but the dog lunges suddenly at a passing toddler and yanks Cole off balance, pulling free and knocking the child over before Cole can regain control.",
+    "name": "Cole"
+  },
+  {
+    "scenario": "crosswalk",
+    "header": "Following a pedestrian injury at an unmarked street crossing, the city traffic authority issued the following directive: \"Pedestrians must cross streets only at designated crosswalk locations.\"",
+    "condition": "overinclusion",
+    "continuation": "Nell needs to cross a quiet residential side street. She steps off the sidewalk at mid-block in the middle of the afternoon, carefully checks both directions, and crosses with no vehicle in sight for several hundred yards.",
+    "name": "Nell"
+  },
+  {
+    "scenario": "crosswalk",
+    "header": "Following a pedestrian injury at an unmarked street crossing, the city traffic authority issued the following directive: \"Pedestrians must cross streets only at designated crosswalk locations.\"",
+    "condition": "underinclusion",
+    "continuation": "Gil uses a designated crosswalk but steps off the curb while the signal is still red, walking directly in front of an oncoming vehicle that has to brake sharply to avoid hitting him.",
+    "name": "Gil"
+  },
+  {
+    "scenario": "fireworks",
+    "header": "Following repeated noise complaints and two roof fires caused by amateur fireworks, the city of Brookhaven passed the following ordinance: \"No fireworks may be set off within city limits at any time.\"",
+    "condition": "overinclusion",
+    "continuation": "Leah lights a single small sparkler in her backyard during her daughter's birthday party \u2014 a handheld device that produces no loud noise and does not launch any projectile.",
+    "name": "Leah"
+  },
+  {
+    "scenario": "fireworks",
+    "header": "Following repeated noise complaints and two roof fires caused by amateur fireworks, the city of Brookhaven passed the following ordinance: \"No fireworks may be set off within city limits at any time.\"",
+    "condition": "underinclusion",
+    "continuation": "Zach builds a large backyard bonfire on New Year's Eve. The burning logs produce loud popping sounds and send embers drifting onto a neighbor's roof, startling residents throughout the street.",
+    "name": "Zach"
+  },
+  {
+    "scenario": "skateboard",
+    "header": "Following several injuries to shoppers caused by skateboards, Westfield Town Center posted signs throughout the complex: \"No skateboarding, rollerblading, or similar activities are permitted in pedestrian areas.\"",
+    "condition": "overinclusion",
+    "continuation": "Skye carries his skateboard through the shopping center's pedestrian zone while walking. Occasionally he sets it on the ground and rolls it beside him at walking pace rather than riding it.",
+    "name": "Skye"
+  },
+  {
+    "scenario": "skateboard",
+    "header": "Following several injuries to shoppers caused by skateboards, Westfield Town Center posted signs throughout the complex: \"No skateboarding, rollerblading, or similar activities are permitted in pedestrian areas.\"",
+    "condition": "underinclusion",
+    "continuation": "Reed rides his bicycle at high speed through the pedestrian shopping zone, narrowly missing several shoppers who have to jump aside to avoid being struck.",
+    "name": "Reed"
+  },
+  {
+    "scenario": "overnight_camping",
+    "header": "After complaints from nearby residents about groups sleeping in the park, the parks department established the following rule: \"No overnight camping or sleeping in Riverside City Park between 11 PM and 6 AM.\"",
+    "condition": "overinclusion",
+    "continuation": "June is a nurse finishing a late-night shift. She sits on a park bench just after midnight to rest for twenty minutes before walking home, briefly nodding off for a few minutes before rousing herself.",
+    "name": "June"
+  },
+  {
+    "scenario": "overnight_camping",
+    "header": "After complaints from nearby residents about groups sleeping in the park, the parks department established the following rule: \"No overnight camping or sleeping in Riverside City Park between 11 PM and 6 AM.\"",
+    "condition": "underinclusion",
+    "continuation": "Vince arrives at the park just before 11 PM with a folding chair, a blanket, and a portable speaker. He remains in the park through the night without sleeping, playing music and preventing others from using the benches while disturbing nearby residents.",
+    "name": "Vince"
+  },
+  {
+    "scenario": "food_lab",
+    "header": "To prevent contamination of laboratory samples and reagents, Whitmore Research Institute established the following rule: \"No food or drinks of any kind are permitted inside the laboratory.\"",
+    "condition": "overinclusion",
+    "continuation": "Mia keeps a sealed, unopened bottle of water in her lab coat pocket throughout her shift, never opening or consuming it at any point.",
+    "name": "Mia"
+  },
+  {
+    "scenario": "food_lab",
+    "header": "To prevent contamination of laboratory samples and reagents, Whitmore Research Institute established the following rule: \"No food or drinks of any kind are permitted inside the laboratory.\"",
+    "condition": "underinclusion",
+    "continuation": "Rex eats his lunch in the break room adjacent to the lab but props the connecting door fully open, allowing food particles and strong food aromas to drift into the sterile lab space.",
+    "name": "Rex"
+  },
+  {
+    "scenario": "quiet_hours",
+    "header": "To allow students adequate rest during the academic year, Glenwood University implemented the following dormitory policy: \"Quiet hours are in effect between 11 PM and 8 AM. No noise above a whisper is permitted in dormitory corridors or common areas during this time.\"",
+    "condition": "overinclusion",
+    "continuation": "Ivy briefly laughs aloud at a text message while walking through the dormitory corridor just after midnight \u2014 a single short burst of noise before she catches herself and continues silently to her room. No doors open and no one stirs in response.",
+    "name": "Ivy"
+  },
+  {
+    "scenario": "quiet_hours",
+    "header": "To allow students adequate rest during the academic year, Glenwood University implemented the following dormitory policy: \"Quiet hours are in effect between 11 PM and 8 AM. No noise above a whisper is permitted in dormitory corridors or common areas during this time.\"",
+    "condition": "underinclusion",
+    "continuation": "Omar practices strobe lighting effects for a class project in his dormitory room throughout the night during quiet hours. The flashing lights seep under the door and through the thin walls, disturbing sleeping residents in adjacent rooms.",
+    "name": "Omar"
+  },
+  {
+    "scenario": "phone_gas",
+    "header": "Following fire safety warnings about ignition risks at fuel pumps, TrustFuel Gas Station posted the following rule at all its locations: \"Mobile phone use is prohibited while refueling at the pump.\"",
+    "condition": "overinclusion",
+    "continuation": "Jade finishes refueling, replaces the nozzle, and seals her gas cap. While still standing at the pump island, she checks her phone for directions before getting back in the car.",
+    "name": "Jade"
+  },
+  {
+    "scenario": "phone_gas",
+    "header": "Following fire safety warnings about ignition risks at fuel pumps, TrustFuel Gas Station posted the following rule at all its locations: \"Mobile phone use is prohibited while refueling at the pump.\"",
+    "condition": "underinclusion",
+    "continuation": "Ray does not use his phone while refueling. Instead, he lights a cigarette while standing next to the open fuel tank, creating a far greater fire and explosion risk than a mobile phone would.",
+    "name": "Ray"
+  },
+  {
+    "scenario": "swimming_alone",
+    "header": "After a near-drowning incident involving an unsupervised swimmer, Hillcrest Community Pool posted the following rule: \"No swimmer may enter the pool without a responsible adult present at poolside.\"",
+    "condition": "overinclusion",
+    "continuation": "Lara is a nationally ranked competitive swimmer who swims her usual laps while her husband reads a book at a lounge chair at the far end of the pool deck. He is present but paying no attention to the pool.",
+    "name": "Lara"
+  },
+  {
+    "scenario": "swimming_alone",
+    "header": "After a near-drowning incident involving an unsupervised swimmer, Hillcrest Community Pool posted the following rule: \"No swimmer may enter the pool without a responsible adult present at poolside.\"",
+    "condition": "underinclusion",
+    "continuation": "Frank, who is not a strong swimmer, enters the deep end of the pool while his elderly neighbor \u2014 a man with severe arthritis who uses a walker \u2014 sits in a chair at poolside. The neighbor would be physically unable to enter the water or render any assistance if Frank got into difficulty.",
+    "name": "Frank"
+  },
+  {
+    "scenario": "garden",
+    "header": "To preserve the rare and protected plant species on display, Thornfield Botanical Garden posted the following notice: \"Visitors are strictly prohibited from picking, touching, or removing any plants or plant parts within the garden.\"",
+    "condition": "overinclusion",
+    "continuation": "Hope is a botanist visiting the garden. She notices a leaf that has fallen naturally to the ground, picks it up, examines it, and places it in her specimen bag to study later.",
+    "name": "Hope"
+  },
+  {
+    "scenario": "garden",
+    "header": "To preserve the rare and protected plant species on display, Thornfield Botanical Garden posted the following notice: \"Visitors are strictly prohibited from picking, touching, or removing any plants or plant parts within the garden.\"",
+    "condition": "underinclusion",
+    "continuation": "Kyle does not touch any plants, but he sprays a commercial insect repellent near a cluster of rare orchids to keep mosquitoes away while he photographs them. The chemical drift settles on the flowers and leaves, causing several to wilt over the following days.",
+    "name": "Kyle"
+  },
+  {
+    "scenario": "hiking_trail",
+    "header": "To prevent erosion and protect the natural surface of the trails, Pinewood Hiking Reserve posted the following rule at its entry points: \"No motorized vehicles of any kind are permitted on the hiking trails.\"",
+    "condition": "overinclusion",
+    "continuation": "Jan is a park ranger who uses an electric-powered mobility scooter to assist an injured hiker off the trail. The scooter is motorized but moves at walking pace and leaves minimal ground disturbance.",
+    "name": "Jan"
+  },
+  {
+    "scenario": "hiking_trail",
+    "header": "To prevent erosion and protect the natural surface of the trails, Pinewood Hiking Reserve posted the following rule at its entry points: \"No motorized vehicles of any kind are permitted on the hiking trails.\"",
+    "condition": "underinclusion",
+    "continuation": "Mel and a group of hikers drag a heavy wheeled cart loaded with camping gear along the trail, leaving deep ruts in the soft earth that cause significant erosion along the trail edge.",
+    "name": "Mel"
+  },
+  {
+    "scenario": "courtroom",
+    "header": "To protect the dignity of court proceedings and the privacy of all parties involved, the county courthouse issued the following directive: \"No audio or video recording of courtroom proceedings is permitted without the judge's express authorization.\"",
+    "condition": "overinclusion",
+    "continuation": "Pat is a law student attending a hearing as an observer. She activates her phone's voice recorder for a few seconds to capture the ambient acoustics of the courtroom for an architecture course assignment. The recording contains no intelligible speech and no identifiable voices, and is used solely as an acoustic sample.",
+    "name": "Pat"
+  },
+  {
+    "scenario": "courtroom",
+    "header": "To protect the dignity of court proceedings and the privacy of all parties involved, the county courthouse issued the following directive: \"No audio or video recording of courtroom proceedings is permitted without the judge's express authorization.\"",
+    "condition": "underinclusion",
+    "continuation": "Sid is a journalist covering the trial. He sketches highly detailed, fully identifiable portraits of the defendant, witnesses, and jurors during the hearing, which are published in the evening newspaper \u2014 raising the same privacy concerns as a photograph.",
+    "name": "Sid"
+  },
+  {
+    "scenario": "phone_icu",
+    "header": "To prevent interference with sensitive monitoring equipment, Northbrook Hospital Intensive Care Unit posted the following rule: \"All mobile phones must be switched off before entering the ICU.\"",
+    "condition": "overinclusion",
+    "continuation": "Elsa is a nurse who inadvertently walks into the ICU with her phone still powered on. The phone is in airplane mode, however, and transmits no signals of any kind.",
+    "name": "Elsa"
+  },
+  {
+    "scenario": "phone_icu",
+    "header": "To prevent interference with sensitive monitoring equipment, Northbrook Hospital Intensive Care Unit posted the following rule: \"All mobile phones must be switched off before entering the ICU.\"",
+    "condition": "underinclusion",
+    "continuation": "Carl switches off his phone before entering the ICU but brings a portable Bluetooth speaker that continuously emits a low-frequency wireless signal, which interferes with a patient's heart monitor.",
+    "name": "Carl"
+  },
+  {
+    "scenario": "helmet",
+    "header": "Following a series of serious head injuries among cyclists, the city of Fairview enacted the following ordinance: \"All cyclists must wear an approved bicycle helmet while riding on public roads or paths.\"",
+    "condition": "overinclusion",
+    "continuation": "Dot is a seven-year-old girl who rides a three-wheeled tricycle on the sidewalk in front of her house without a helmet. Her parents consider the tricycle stable enough not to require one.",
+    "name": "Dot"
+  },
+  {
+    "scenario": "helmet",
+    "header": "Following a series of serious head injuries among cyclists, the city of Fairview enacted the following ordinance: \"All cyclists must wear an approved bicycle helmet while riding on public roads or paths.\"",
+    "condition": "underinclusion",
+    "continuation": "Art wears his bicycle helmet on every ride, but consistently fastens the chin strap loosely and tilts the helmet back on his head, rendering it largely ineffective in the event of a fall.",
+    "name": "Art"
+  },
+  {
+    "scenario": "trail_dog",
+    "header": "To minimize disturbance to nesting birds and wildlife, Greenway Nature Reserve posted the following rule at its trailheads: \"No dogs or other pets are permitted on the nature trails.\"",
+    "condition": "overinclusion",
+    "continuation": "Faye is a wildlife researcher who walks along the trail with a trained detection dog certified for ecological surveys. The animal is kept on a short lead and remains calm and quiet throughout.",
+    "name": "Faye"
+  },
+  {
+    "scenario": "trail_dog",
+    "header": "To minimize disturbance to nesting birds and wildlife, Greenway Nature Reserve posted the following rule at its trailheads: \"No dogs or other pets are permitted on the nature trails.\"",
+    "condition": "underinclusion",
+    "continuation": "Ned leaves his dog in the car and walks the trail alone. Along the route, he plays recorded bird calls loudly through a portable speaker in an attempt to attract birds, disturbing several nesting sites in the process.",
+    "name": "Ned"
+  },
+  {
+    "scenario": "food_pool",
+    "header": "To maintain water quality and prevent choking hazards, Sunlake Aquatic Center posted the following notice: \"No food or drinks are permitted in the pool or within five feet of the pool edge.\"",
+    "condition": "overinclusion",
+    "continuation": "Amy brings a sealed water bottle to the pool and places it on a table well beyond the five-foot boundary. While searching for her towel, she briefly rests the bottle on the pool edge before picking it back up.",
+    "name": "Amy"
+  },
+  {
+    "scenario": "food_pool",
+    "header": "To maintain water quality and prevent choking hazards, Sunlake Aquatic Center posted the following notice: \"No food or drinks are permitted in the pool or within five feet of the pool edge.\"",
+    "condition": "underinclusion",
+    "continuation": "Joe brings no food or drink to the pool, but he chews gum while swimming and spits it out into the pool water before climbing out.",
     "name": "Joe"
   },
   {
-    "block": 1,
-    "scenario": "classroom",
-    "header": "Students who snack during class often drop their food in the classroom. To keep the classrooms clean, the school has decided to ban food in the classroom.",
+    "scenario": "assembly",
+    "header": "Following disruptions caused by large spontaneous gatherings, the city of Harborview enacted the following ordinance: \"No assembly of more than fifteen people without a prior permit is permitted in the town square.\"",
     "condition": "overinclusion",
-    "continuation": "April has diabetes. She is not feeling well in class and must eat something sweet immediately to avoid fainting. April finds a chocolate bar in her purse and takes a bite. She feels better and is able to concentrate on the lesson again.",
-    "name": "April"
+    "continuation": "Gwen's theater group of eighteen people gathers in the town square to rehearse a silent, motionless tableau performance. They cause no noise, attract no crowd, and the rehearsal ends within twenty minutes.",
+    "name": "Gwen"
   },
   {
-    "block": 2,
-    "scenario": "classroom",
-    "header": "Students who snack during class often drop their food in the classroom. To keep the classrooms clean, the school has decided to ban food in the classroom.",
+    "scenario": "assembly",
+    "header": "Following disruptions caused by large spontaneous gatherings, the city of Harborview enacted the following ordinance: \"No assembly of more than fifteen people without a prior permit is permitted in the town square.\"",
     "condition": "underinclusion",
-    "continuation": "Joan has no interest in math class, so she decides to groom herself instead. She takes a nail clipper and file from her purse and begins to cut and file her fingernails, allowing the clippings to fall onto the classroom floor.",
-    "name": "Joan"
+    "continuation": "Boyd and eleven friends set up amplified speakers in the town square and perform loud music for two hours, creating the same public disruption as a much larger unpermitted gathering.",
+    "name": "Boyd"
   },
   {
-    "block": 7,
-    "scenario": "classroom",
-    "header": "Students who snack during class often drop their food in the classroom. To keep the classrooms clean, the school has decided to ban food in the classroom.",
-    "condition": "violation",
-    "continuation": "George suffers from a dietary disorder and constantly feels the need to snack. During history class, he opens up a chocolate bar. After taking a bite of the chocolate bar, it slips out of George's hands and lands on the classroom floor.",
-    "name": "George"
-  },
-  {
-    "block": 4,
-    "scenario": "driving",
-    "header": "While driving under the influence of alcohol, a young woman suffered a car accident that ended her life. In order to avoid future accidents, Congress established a law: \"If a police-administered breathalyzer test detects any trace of alcohol, the driver's vehicle will be seized and the driver subject to imprisonment.\"",
-    "condition": "compliance",
-    "continuation": "Lewis drives his car to work after having breakfast and drinking water. He is stopped by the police on his way and takes a breathalyzer test that detects no traces of alcohol.",
-    "name": "Lewis"
-  },
-  {
-    "block": 1,
-    "scenario": "driving",
-    "header": "While driving under the influence of alcohol, a young woman suffered a car accident that ended her life. In order to avoid future accidents, Congress established a law: \"If a police-administered breathalyzer test detects any trace of alcohol, the driver's vehicle will be seized and the driver subject to imprisonment.\"",
+    "scenario": "age_restriction",
+    "header": "To comply with legal regulations protecting minors, Starlight Music Venue established the following rule: \"Entry to the venue is restricted to guests aged 18 and over. Valid identification must be presented at the door.\"",
     "condition": "overinclusion",
-    "continuation": "Andrea is late to work. While getting ready as fast as she can, Andrea uses mouthwash that contains alcohol. Despite her tardiness, Andrea drives carefully. On her way, she is stopped by the police. The breathalyzer test detects a small amount of alcohol.",
-    "name": "Andrea"
+    "continuation": "Cara is 17 years old and arrives with her 22-year-old sister. She presents her valid national ID \u2014 which clearly shows her age \u2014 and explains to the doorperson that she intends to consume only soft drinks and stay with family all evening.",
+    "name": "Cara"
   },
   {
-    "block": 2,
-    "scenario": "driving",
-    "header": "While driving under the influence of alcohol, a young woman suffered a car accident that ended her life. In order to avoid future accidents, Congress established a law: \"If a police-administered breathalyzer test detects any trace of alcohol, the driver's vehicle will be seized and the driver subject to imprisonment.\"",
+    "scenario": "age_restriction",
+    "header": "To comply with legal regulations protecting minors, Starlight Music Venue established the following rule: \"Entry to the venue is restricted to guests aged 18 and over. Valid identification must be presented at the door.\"",
     "condition": "underinclusion",
-    "continuation": "Ursula goes to a party where she makes use of a drug called \"ecstasy\". This drug produces changes in perception and increased physical activity. Ursula does not drink any alcohol at the party, only water. Once the party is over, Ursula gets in her car to return home still under the influence of \"ecstasy\". She is stopped by the police, but the breathalyzer test detects no alcohol.",
-    "name": "Ursula"
-  },
-  {
-    "block": 5,
-    "scenario": "driving",
-    "header": "While driving under the influence of alcohol, a young woman suffered a car accident that ended her life. In order to avoid future accidents, Congress established a law: \"If a police-administered breathalyzer test detects any trace of alcohol, the driver's vehicle will be seized and the driver subject to imprisonment.\"",
-    "condition": "violation",
-    "continuation": "Mario drinks heavily at a nightclub. He uses his car to go back home. On his way, police stops Mario and he takes a breathalyzer test that detects traces of alcohol.",
-    "name": "Mario"
-  },
-  {
-    "block": 8,
-    "scenario": "environment",
-    "header": "As a result of changing weather, the native flora in Aurontown is disappearing. The environmental committee has initiated a reforestation project to replant native shrubs in the Aurontown National Park, which will gradually restore the regional flora. So people will not damage the native shrubs, park authorities have laid a fence around the reforestation site, and posted signs that say: \"No park visitors beyond this point\".",
-    "condition": "compliance",
-    "continuation": "Samantha goes for a walk on the paths of the Aurontown national park. After exiting the park, she passes a field of native grasses on her way back to her car. Samantha looks over the field and takes a photo of the sunset.",
-    "name": "Samantha"
-  },
-  {
-    "block": 3,
-    "scenario": "environment",
-    "header": "As a result of changing weather, the native flora in Aurontown is disappearing. The environmental committee has initiated a reforestation project to replant native shrubs in the Aurontown National Park, which will gradually restore the regional flora. So people will not damage the native shrubs, park authorities have laid a fence around the reforestation site, and posted signs that say: \"No park visitors beyond this point\".",
-    "condition": "overinclusion",
-    "continuation": "Anna goes for a walk on the paths of the Aurontown National Park and reaches the site of the reforestation project. Without harming the native shrubs, Anna skips over the fence to take a photo of the sunset.",
-    "name": "Anna"
-  },
-  {
-    "block": 2,
-    "scenario": "environment",
-    "header": "As a result of changing weather, the native flora in Aurontown is disappearing. The environmental committee has initiated a reforestation project to replant native shrubs in the Aurontown National Park, which will gradually restore the regional flora. So people will not damage the native shrubs, park authorities have laid a fence around the reforestation site, and posted signs that say: \"No park visitors beyond this point\".",
-    "condition": "underinclusion",
-    "continuation": "Lucy goes for a walk on the paths of the Aurontown National Park. After exiting the park, she finds a native shrub growing on the edge of a parking lot, and rips a branch off.",
-    "name": "Lucy"
-  },
-  {
-    "block": 1,
-    "scenario": "environment",
-    "header": "As a result of changing weather, the native flora in Aurontown is disappearing. The environmental committee has initiated a reforestation project to replant native shrubs in the Aurontown National Park, which will gradually restore the regional flora. So people will not damage the native shrubs, park authorities have laid a fence around the reforestation site, and posted signs that say: \"No park visitors beyond this point\".",
-    "condition": "violation",
-    "continuation": "Jolene goes for a walk on the paths of the Aurontown National Park and reaches the site of the reforestation project. She skips over the fence, and rips a branch off one of the native shrubs.",
-    "name": "Jolene"
-  },
-  {
-    "block": 5,
-    "scenario": "library",
-    "header": "After noticing damage to returned library books, the Figuria University Library created the following rule: \"Making notes and scribbling on library-owned books is strictly forbidden\".",
-    "condition": "compliance",
-    "continuation": "Peter is a graduate student at Figuria University. He is very interested in philosophy. Peter borrows several books from the library. While reading them, he takes careful notes in a separate notebook. After finishing his study, he returns the books unmarked.",
-    "name": "Peter"
-  },
-  {
-    "block": 2,
-    "scenario": "library",
-    "header": "After noticing damage to returned library books, the Figuria University Library created the following rule: \"Making notes and scribbling on library-owned books is strictly forbidden\".",
-    "condition": "overinclusion",
-    "continuation": "Marcos, a student at Figuria University, borrows some books from the library. To help him study, he takes notes on the page margins. This helps Marcos make connections between important points in his assigned readings. After finishing his study, he meticulously erases all his notes, and returns the books in the same condition he borrowed them in.",
-    "name": "Marcos"
-  },
-  {
-    "block": 1,
-    "scenario": "library",
-    "header": "After noticing damage to returned library books, the Figuria University Library created the following rule: \"Making notes and scribbling on library-owned books is strictly forbidden\".",
-    "condition": "underinclusion",
-    "continuation": "Heather, a student at Figuria University, borrows some books from the library. To help her study, she folds several of the books' pages inward so as to easily return to them later. This creates permanent creases on the books' pages. After finishing his study, she returns the book to the library.",
-    "name": "Heather"
-  },
-  {
-    "block": 6,
-    "scenario": "library",
-    "header": "After noticing damage to returned library books, the Figuria University Library created the following rule: \"Making notes and scribbling on library-owned books is strictly forbidden\".",
-    "condition": "violation",
-    "continuation": "Laura is a student at Figuria University who likes to doodle funny comic strips. She borrows a biology book from the library. While Laura is studying, she can't help but draw cartoon figures making fun of biology students. She returns the book with all of her drawings inside.",
-    "name": "Laura"
-  },
-  {
-    "block": 1,
-    "scenario": "music",
-    "header": "House parties are frequent in the college town of Greenville. The parties cause problems for Greenville residents and families, whose sleep is disturbed. To avoid nuisance to Greenville residents, the city adopted an ordinance: \"No loud music past 10 PM\".",
-    "condition": "compliance",
-    "continuation": "Josh arrives home at 1AM after a long work trip. He is happy, so he almost inaudibly hums a song as he unlocks his front door.",
-    "name": "Josh"
-  },
-  {
-    "block": 4,
-    "scenario": "music",
-    "header": "House parties are frequent in the college town of Greenville. The parties cause problems for Greenville residents and families, whose sleep is disturbed. To avoid nuisance to Greenville residents, the city adopted an ordinance: \"No loud music past 10 PM\".",
-    "condition": "overinclusion",
-    "continuation": "Mark lives in a cul-de-sac, and his only neighbors travel out of town for the long weekend. Mark invites his bandmates to rehearse, realizing the volume will not disturb anyone. The band practices until 1 AM.",
-    "name": "Mark"
-  },
-  {
-    "block": 3,
-    "scenario": "music",
-    "header": "House parties are frequent in the college town of Greenville. The parties cause problems for Greenville residents and families, whose sleep is disturbed. To avoid nuisance to Greenville residents, the city adopted an ordinance: \"No loud music past 10 PM\".",
-    "condition": "underinclusion",
-    "continuation": "Paul is a light jockey at some of the best clubs in town. To prepare for an upcoming show, one night Paul sets up his laser lights in the front yard and rehearses his show until 1 AM. The lights are so bright that neighbors complain about not being able to sleep.",
-    "name": "Paul"
-  },
-  {
-    "block": 2,
-    "scenario": "music",
-    "header": "House parties are frequent in the college town of Greenville. The parties cause problems for Greenville residents and families, whose sleep is disturbed. To avoid nuisance to Greenville residents, the city adopted an ordinance: \"No loud music past 10 PM\".",
-    "condition": "violation",
-    "continuation": "Brian invites his friends over to party while his parents are away. They hire a DJ and play very loud music until 1 AM.",
-    "name": "Brian"
-  },
-  {
-    "block": 7,
-    "scenario": "shoes",
-    "header": "One day, a guest entered Maria's house with his shoes on and dirtied the carpet in her living room. In order to keep her house as clean as possible, Maria established that \"Wearing shoes in the house is not allowed\".",
-    "condition": "compliance",
-    "continuation": "Laura just bought Maria a present. In the hallway out front Maria's apartment, she wraps the present in a parcel. Before entering Maria's apartment, Laura takes off her shoes and walks barefoot around Maria's apartment.",
-    "name": "Laura"
-  },
-  {
-    "block": 2,
-    "scenario": "shoes",
-    "header": "One day, a guest entered Maria's house with his shoes on and dirtied the carpet in her living room. In order to keep her house as clean as possible, Maria established that \"Wearing shoes in the house is not allowed\".",
-    "condition": "overinclusion",
-    "continuation": "John just bought a brand new pair of dress shoes. In the hallway out front Maria's apartment, he takes the shoes out of the box for the first time and puts them on. John then walks around Maria's apartment in his pristine dress shoes.",
-    "name": "John"
-  },
-  {
-    "block": 1,
-    "scenario": "shoes",
-    "header": "One day, a guest entered Maria's house with his shoes on and dirtied the carpet in her living room. In order to keep her house as clean as possible, Maria established that \"Wearing shoes in the house is not allowed\".",
-    "condition": "underinclusion",
-    "continuation": "Carlos walks around barefoot unless footwear is strictly necessary. On a rainy day, he walks from his house to Maria's apartment. Carlos walks into Maria's home with his feet muddy, dirtying Maria's carpet.",
-    "name": "Carlos"
-  },
-  {
-    "block": 8,
-    "scenario": "shoes",
-    "header": "One day, a guest entered Maria's house with his shoes on and dirtied the carpet in her living room. In order to keep her house as clean as possible, Maria established that \"Wearing shoes in the house is not allowed\".",
-    "condition": "violation",
-    "continuation": "On a rainy day, Joanna walks from her house to Maria's apartment. She walks inside Maria's home with her muddy boots on, dirtying Maria's carpet.",
-    "name": "Joanna"
-  },
-  {
-    "block": 3,
-    "scenario": "sleep",
-    "header": "A group of people slept on the benches at the train station every night. To avoid use of the station concourse as accommodation or overnight shelter, the station manager established a rule: \"No sleeping is allowed on the station benches\".",
-    "condition": "compliance",
-    "continuation": "Veronica is a frequent commuter on a local train. She sits at one of the benches while excitingly talking over the phone with one of her best friends. Before the call is over, her train arrives at the station and she gets onboard.",
-    "name": "Veronica"
-  },
-  {
-    "block": 2,
-    "scenario": "sleep",
-    "header": "A group of people slept on the benches at the train station every night. To avoid use of the station concourse as accommodation or overnight shelter, the station manager established a rule: \"No sleeping is allowed on the station benches\".",
-    "condition": "overinclusion",
-    "continuation": "Julia is a businesswoman. She spent all day out of town negotiating important contracts. After a long day of work, Julia sits at one of the benches at the train station to wait for the train home. While waiting, she falls asleep for about 5 minutes, before waking up to the sound of an incoming train.",
-    "name": "Julia"
-  },
-  {
-    "block": 1,
-    "scenario": "sleep",
-    "header": "A group of people slept on the benches at the train station every night. To avoid use of the station concourse as accommodation or overnight shelter, the station manager established a rule: \"No sleeping is allowed on the station benches\".",
-    "condition": "underinclusion",
-    "continuation": "Richard is a homeless person. At the end of the day, he lies down on a bench at the station, resting his head on a makeshift pillow and wrapped in an old blanket. However, Richard never actually sleeps.",
-    "name": "Richard"
-  },
-  {
-    "block": 4,
-    "scenario": "sleep",
-    "header": "A group of people slept on the benches at the train station every night. To avoid use of the station concourse as accommodation or overnight shelter, the station manager established a rule: \"No sleeping is allowed on the station benches\".",
-    "condition": "violation",
-    "continuation": "Robert is a homeless person. As the streets are cold and uncomfortable, he goes to the train station, lies down in one of the benches, where he sleeps soundly throughout the night.",
-    "name": "Robert"
-  },
-  {
-    "block": 2,
-    "scenario": "vehicles",
-    "header": "One day at the local park, there was a tragic accident involving a pedestrian and a car. Aiming to avoid accidents that could endanger parkgoers or jeopardize their physical integrity, the park administrators established a rule that: \"No cars are allowed inside the park\".",
-    "condition": "compliance",
-    "continuation": "Joanna walks into the park. She takes a long and relaxing stroll observing the trees and birds.",
-    "name": "Joanna"
-  },
-  {
-    "block": 1,
-    "scenario": "vehicles",
-    "header": "One day at the local park, there was a tragic accident involving a pedestrian and a car. Aiming to avoid accidents that could endanger parkgoers or jeopardize their physical integrity, the park administrators established a rule that: \"No cars are allowed inside the park\".",
-    "condition": "overinclusion",
-    "continuation": "The city's championship-winning team parades in a big limo inside the park to celebrate the title. The limo proceeds very slowly and police scouts on the ground ensure no parkgoer gets too close.",
-    "name": "the team"
-  },
-  {
-    "block": 4,
-    "scenario": "vehicles",
-    "header": "One day at the local park, there was a tragic accident involving a pedestrian and a car. Aiming to avoid accidents that could endanger parkgoers or jeopardize their physical integrity, the park administrators established a rule that: \"No cars are allowed inside the park\".",
-    "condition": "underinclusion",
-    "continuation": "Martha is late to a court appointment. She hops into her motorbike and heads downtown. Halfway through, she realizes that she might get there earlier by taking a shortcut through the park. She enters the park in her motorbike, cutting several minutes off her commute time.",
-    "name": "Martha"
-  },
-  {
-    "block": 3,
-    "scenario": "vehicles",
-    "header": "One day at the local park, there was a tragic accident involving a pedestrian and a car. Aiming to avoid accidents that could endanger parkgoers or jeopardize their physical integrity, the park administrators established a rule that: \"No cars are allowed inside the park\".",
-    "condition": "violation",
-    "continuation": "John is late to work and notices that the only way he can get there in time for an important meeting is by taking a shortcut through the park. He takes the shortcut, making it just in time for his meeting.",
-    "name": "John"
+    "continuation": "Noel is 19 years old and enters the venue with a valid ID. Once inside, he purchases alcohol at the bar and carries it to a side exit, where he passes it to his 16-year-old friend who has slipped in through a back door.",
+    "name": "Noel"
   }
 ];
