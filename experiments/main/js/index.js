@@ -185,9 +185,11 @@ function init() {
   var scenarios = _.uniq(_.pluck(stimuli, 'scenario'));
   scenarios = _.shuffle(scenarios);
 
-  var conditions = ['violation', 'compliance', 'overinclusion', 'underinclusion'];
-  // Repeat conditions to cover all 8 scenarios (2 of each)
-  var conditionList = _.shuffle(conditions.concat(conditions));
+  // 3 overinclusion, 3 underinclusion, 1 violation, 1 compliance
+  var conditionList = _.shuffle(
+    [['overinclusion', 3], ['underinclusion', 3], ['violation', 1], ['compliance', 1]]
+      .flatMap(function([c, n]) { return Array(n).fill(c); })
+  );
 
   var selected = [];
   for (var i = 0; i < scenarios.length; i++) {
