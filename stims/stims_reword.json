@@ -1,4 +1,4 @@
-var stimuli = [
+[
   {
     "scenario": "classroom",
     "header": "Students who snack during class often drop food on the classroom floor. To keep the classrooms tidy, the school has decided to ban food in the classroom.",
@@ -178,7 +178,7 @@ var stimuli = [
     "scenario": "sleep",
     "header": "A number of individuals had taken to sleeping on benches at the central train station every night. To prevent the station from being used as overnight accommodation, the station manager established a rule: \"Sleeping on station benches is not permitted.\"",
     "condition": "overinclusion",
-    "continuation": "Vanessa is an executive who spent the day traveling for business negotiations. After a tiring day, she sits on a station bench to wait for her train home. She dozes off briefly \u2014 no more than five minutes \u2014 before the sound of an approaching train wakes her.",
+    "continuation": "Vanessa is an executive who spent the day traveling for business negotiations. After a tiring day, she sits on a station bench to wait for her train home. She dozes off briefly — no more than five minutes — before the sound of an approaching train wakes her.",
     "name": "Vanessa"
   },
   {
@@ -223,4 +223,4 @@ var stimuli = [
     "continuation": "Steve is late for an important work meeting and realizes he can only make it on time by cutting through the park. He drives his car through the park, arriving at the office just in time.",
     "name": "Steve"
   }
-];
+]
