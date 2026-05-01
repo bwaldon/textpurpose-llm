@@ -9,6 +9,10 @@ body {
   line-height: 1.6;
 }
 
+#instructions {
+  text-align: left;
+}
+
 table {
   width: 100%;
 }

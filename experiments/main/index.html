@@ -42,7 +42,7 @@
       Welcome! In this study, we are interested in how people interpret rules and whether they think someone has violated a rule.
       You will read a series of short scenarios and answer a few questions about each. Thanks for participating!
     </p>
-    <button id="start_button" type="button">Start Experiment</button>
+    <button id="start_button" type="button">Continue</button>
     <p id="mustaccept" style="color:red; display:none;">Please accept the HIT before starting.</p>
   </div>
 
@@ -58,8 +58,15 @@
   <div class="slide" id="instructions">
     <br>
     <h2>Instructions</h2>
-    <p>[INSTRUCTIONS GO HERE]</p>
-    <button type="button" onclick="_s.button()">Continue</button>
+    <p>In this study, you will read a series of short scenarios. Each scenario describes a rule that was established for a specific reason, along with a description of what one person did.</p>
+    <p>For each scenario, you will answer <b>two questions in sequence</b>:</p>
+    <ol>
+      <li style="margin-bottom:8px;"><b>Your own judgment:</b> Did the person violate the rule? Answer <b>YES</b> or <b>NO</b> based on your own interpretation of the situation.</li>
+      <li id="instructions_q2_item"></li>
+    </ol>
+    <p>Please read each scenario carefully before responding. There are no right or wrong answers &mdash; we are interested in your honest interpretation of each situation.</p>
+    <p><b>Important:</b> This study records mouse movements and tab switching to ensure you do not consult external sources during the task. If your cursor leaves the browser window and/or you switch tabs more than 4 times during the study, you will not be paid.</p>
+    <div style="text-align:center;"><button type="button" onclick="_s.button()">Start study</button></div>
   </div>
 
   <!-- SLIDE: Trial -->
