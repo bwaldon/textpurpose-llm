@@ -75,9 +75,7 @@ function make_slides(f) {
       }
 
       this.q1_response = q1;
-      var q1_label = q1.toUpperCase();
-      var q1_text = $("#q1_text").html();
-      $("#q1_recap").html(q1_text + "<br><br><b>Your answer:</b> " + q1_label);
+      $("#q1_recap").html($("#q1_text").html());
       $("#q1_section").hide();
       $("#prediction_section").show();
     },
