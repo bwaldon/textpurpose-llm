@@ -41,6 +41,8 @@ function make_slides(f) {
       }
     },
     button: function() {
+      exp.tab_switches = 0;
+      exp.cursor_departs = 0;
       exp.go();
     }
   });
