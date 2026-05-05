@@ -2,6 +2,7 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const demoMode = !(urlParams.get('demoMode') == undefined);
 const debugMode = urlParams.get('debug') !== null;
+const showBonus = false;
 
 function make_slides(f) {
   var slides = {};
@@ -23,20 +24,23 @@ function make_slides(f) {
   slides.instructions = slide({
     name: "instructions",
     start: function() {
+      var bonusText = showBonus
+        ? " As a bonus, you will earn an extra <b>$0.XX</b> if you answer this question correctly on at least 6 out of 8 trials."
+        : "";
       if (exp.prediction_condition === 'human') {
         $("#instructions_q2_item").html(
           "<b>Your prediction about others:</b> After giving your own answer, you will be asked: " +
           "what answer will the <em>majority of other experiment participants</em> give to the same question? " +
-          "Answer <b>YES</b> or <b>NO</b>. " +
-          "As a bonus, you will earn an extra <b>$0.XX</b> if you answer this question correctly on at least 6 out of 8 trials."
+          "Answer <b>YES</b> or <b>NO</b>." +
+          bonusText
         );
       } else {
         $("#instructions_q2_item").html(
           "<b>Your prediction about AI chatbots:</b> After giving your own answer, you will be asked: " +
           "what answer will the <em>majority of AI chatbots</em> give to the same question? " +
           "We will ask three chatbots &mdash; <em>Claude</em>, <em>ChatGPT</em>, and <em>Gemini</em> &mdash; and use the majority answer. " +
-          "Answer <b>YES</b> or <b>NO</b>. " +
-          "As a bonus, you will earn an extra <b>$0.XX</b> if you answer this question correctly on at least 6 out of 8 trials."
+          "Answer <b>YES</b> or <b>NO</b>." +
+          bonusText
         );
       }
     },
