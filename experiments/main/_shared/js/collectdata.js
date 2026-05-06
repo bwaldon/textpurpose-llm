@@ -32,7 +32,7 @@ function htmlify(obj) {
 var collectdata = {
   submit: function(expdata) {
     var experiment_id = get_url_param("experiment_id", null);
-    var participant_id = get_url_param("participant_id", null);
+    var participant_id = get_url_param("PROLIFIC_PID", null);
 
     // debug mode: display data in browser when URL params are absent
     if (!experiment_id || !participant_id) {
