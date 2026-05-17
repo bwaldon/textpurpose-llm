@@ -61,13 +61,13 @@ var stimuli = [
   },
   {
     "scenario": "library",
-    "header": "After noticing damage to returned books, the Harwick University Library created the following rule: \"Writing in or defacing library-owned books is strictly prohibited.\"",
+    "header": "After noticing damage to returned books, the Harwick University Library created the following rule: \"Making notes and scribbling on library-owned books is strictly prohibited.\"",
     "compliance": {
       "continuation": "Daniel is a graduate student at Harwick University with a deep interest in sociology. He checks out several books from the library and reads them carefully, keeping all of his notes in a dedicated spiral notebook. He returns every book without a single mark.",
       "name": "Daniel"
     },
     "overinclusion": {
-      "continuation": "Victor, enrolled at Harwick University, borrows a stack of reference books. As a study aid, he lightly pencils notes in the margins to track key arguments and make connections between texts. Before returning the books, he carefully erases every mark he made, leaving them in the same condition he borrowed them in.",
+      "continuation": "Victor, enrolled at Harwick University, borrows a stack of reference books. As a study aid, he lightly pencils notes in the margins to track key arguments and make connections between texts. Before returning the books, he carefully erases every mark he made, leaving them in the exact same condition he borrowed them in.",
       "name": "Victor"
     },
     "underinclusion": {
@@ -103,7 +103,7 @@ var stimuli = [
     "scenario": "shoes",
     "header": "One day, a guest entered Elena's home with muddy boots and soiled the carpet in her living room. To keep her home as clean as possible, Elena established a rule: \"No shoes are permitted inside the house.\"",
     "compliance": {
-      "continuation": "Hannah has bought a gift for her friend Elena. In the entryway of Elena's apartment, she wraps the present in tissue paper. Before stepping inside, Hannah removes her shoes and walks around the apartment in her socks.",
+      "continuation": "Hannah has bought a gift for Elena. In the entryway of Elena's apartment, Hannah wraps the present in tissue paper. Before stepping inside, Hannah removes her shoes and walks around the apartment in her socks.",
       "name": "Hannah"
     },
     "overinclusion": {
@@ -123,7 +123,7 @@ var stimuli = [
     "scenario": "sleep",
     "header": "A number of individuals had taken to sleeping on benches at the central train station every night. To prevent the station from being used as overnight accommodation, the station manager established a rule: \"Sleeping on station benches is not permitted.\"",
     "compliance": {
-      "continuation": "Patricia is a regular commuter on the suburban rail line. She sits on one of the station benches and chats animatedly with a coworker over the phone. Her train arrives before the call ends, and she boards immediately.",
+      "continuation": "Patricia is a regular commuter on the suburban rail line. She sits on one of the station benches and chats with a coworker over the phone. Her train arrives before the call ends, and she boards immediately.",
       "name": "Patricia"
     },
     "overinclusion": {
@@ -141,14 +141,14 @@ var stimuli = [
   },
   {
     "scenario": "vehicles",
-    "header": "A serious accident involving a pedestrian and a motorcycle occurred at Cedarwood City Park. To protect parkgoers from injury, the park administrators established a rule: \"No motor vehicles of any kind are allowed inside the park.\"",
+    "header": "A serious accident involving a pedestrian and a motorcycle occurred at Cedarwood City Park. To protect parkgoers from injury, the park administrators established a rule: \"Cars are prohibited inside the park.\"",
     "compliance": {
       "continuation": "Linda enters the park for her afternoon walk. She strolls leisurely along the paths, enjoying the trees and birdsong.",
       "name": "Linda"
     },
     "overinclusion": {
-      "continuation": "The city's championship-winning basketball squad is honored with a celebratory parade through the park aboard a large slow-moving float. Officers accompany them on foot to manage the crowd and keep spectators at a safe distance.",
-      "name": "the squad"
+      "continuation": "The city's championship-winning basketball team is honored with a celebratory parade through the park aboard a large black limousine. Officers accompany the limo on foot to manage the crowd and keep spectators at a safe distance.",
+      "name": "the team"
     },
     "underinclusion": {
       "continuation": "Karen is running late for a medical appointment. She sets off on her motorbike and, realizing she can save time, takes a shortcut through the park. She weaves between pedestrians as she crosses the park, shaving several minutes off her commute.",
