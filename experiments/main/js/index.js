@@ -243,15 +243,33 @@ function init() {
   for (var i = 0; i < scenarios.length; i++) {
     var scenario = scenarios[i];
     var condition = conditionList[i];
-    var matching = _.filter(stimuli, function(s) {
-      return s.scenario === scenario && s.condition === condition;
-    });
-    if (matching.length > 0) {
-      selected.push(matching[0]);
+    var scenario_data = _.find(stimuli, function(s) { return s.scenario === scenario; });
+    if (scenario_data && scenario_data[condition]) {
+      selected.push({
+        scenario: scenario,
+        header: scenario_data.header,
+        condition: condition,
+        continuation: scenario_data[condition].continuation,
+        name: scenario_data[condition].name
+      });
     }
   }
 
-  exp.all_stims = demoMode ? stimuli : _.shuffle(selected);
+  var allFlat = [];
+  _.each(stimuli, function(s) {
+    _.each(['compliance', 'overinclusion', 'underinclusion', 'violation'], function(cond) {
+      if (s[cond]) {
+        allFlat.push({
+          scenario: s.scenario,
+          header: s.header,
+          condition: cond,
+          continuation: s[cond].continuation,
+          name: s[cond].name
+        });
+      }
+    });
+  });
+  exp.all_stims = demoMode ? allFlat : _.shuffle(selected);
 
   exp.system = {
     Browser: BrowserDetect.browser,
