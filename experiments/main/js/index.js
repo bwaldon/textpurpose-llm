@@ -47,6 +47,7 @@ function make_slides(f) {
     button: function() {
       exp.tab_switches = 0;
       exp.cursor_departs = 0;
+      exp.integrity_active = true;
       exp.go();
     }
   });
@@ -184,17 +185,42 @@ function init() {
   // Integrity tracking
   exp.tab_switches = 0;
   exp.cursor_departs = 0;
+  exp.integrity_active = false;
+
+  var INTEGRITY_WARN_AT = 2;
+  var INTEGRITY_BLOCK_AT = 5;
+
+  function checkIntegrity() {
+    if (!exp.integrity_active) return;
+    var total = exp.tab_switches + exp.cursor_departs;
+    if (total >= INTEGRITY_BLOCK_AT) {
+      $(".slide").hide();
+      $(".progress").hide();
+      $("#return_study_overlay").show();
+      return;
+    }
+    if (total >= INTEGRITY_WARN_AT) {
+      var remaining = INTEGRITY_BLOCK_AT - total;
+      $("#warning_toast").html(
+        "<b>Warning:</b> You have left the study window " + total + " times. " +
+        "If you do so " + remaining + " more time(s) you will be asked to return the study and will not be paid."
+      ).show();
+      setTimeout(function() { $("#warning_toast").fadeOut(); }, 6000);
+    }
+  }
 
   document.addEventListener('visibilitychange', function() {
     if (document.hidden) {
       exp.tab_switches++;
       if (debugMode) $("#debug_tab_switches").text(exp.tab_switches);
+      checkIntegrity();
     }
   });
 
   document.addEventListener('mouseleave', function() {
     exp.cursor_departs++;
     if (debugMode) $("#debug_cursor_departs").text(exp.cursor_departs);
+    checkIntegrity();
   });
 
   if (debugMode) $("#debug_overlay").show();
