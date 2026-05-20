@@ -2,7 +2,7 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const demoMode = !(urlParams.get('demoMode') == undefined);
 const debugMode = urlParams.get('debug') !== null;
-const showBonus = false;
+const showBonus = true;
 
 function make_slides(f) {
   var slides = {};
@@ -38,9 +38,8 @@ function make_slides(f) {
         $("#instructions_q2_item").html(
           "<b>Your prediction about AI chatbots:</b> After giving your own answer, you will be asked: " +
           "what answer will the <em>majority of AI chatbots</em> give to the same question? " +
-          "Answer <b>YES</b> or <b>NO</b>." +
-          "<br><br> We will ask three chatbots &mdash; <b>ChatGPT</b> (OpenAI's <i>GPT-4.1</i> model), <b>Claude</b> (Anthropic's <i>Claude Sonnet</i> model), and <b>Gemini</b> (Google's <i>Gemini 2.5 Flash</i> model) and use the majority answer. <br><br> These models were each released within the last 12 to 18 months." +
-          bonusText
+          "Answer <b>YES</b> or <b>NO</b>." + bonusText +
+          "<br><br> We will ask three chatbots &mdash; <b>ChatGPT</b> (OpenAI's <i>GPT-4.1</i> model), <b>Claude</b> (Anthropic's <i>Claude Sonnet</i> model), and <b>Gemini</b> (Google's <i>Gemini 2.5 Flash</i> model) and use the majority answer. <br><br> These models were each released within the last 12 to 18 months." 
         );
       }
     },
