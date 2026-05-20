@@ -51,6 +51,63 @@ function make_slides(f) {
     }
   });
 
+  slides.comprehension_check = slide({
+    name: "comprehension_check",
+    start: function() {
+      $("#comp_check_error").hide();
+      $("#comp_check_no_selection").hide();
+      this.renderOptions();
+    },
+
+    renderOptions: function() {
+      var correctText = exp.prediction_condition === 'human'
+        ? "I will be asked how other people would interpret rules."
+        : "I will be asked how AI chatbots would interpret rules.";
+
+      var options = _.shuffle([
+        "I will be asked how to punish AI chatbots that violate rules.",
+        "I have to remember a number while I decide each case.",
+        correctText,
+        "I will be asked to rewrite rules to make them more fair."
+      ]);
+
+      var html = '';
+      _.each(options, function(opt, i) {
+        var val = (opt === correctText) ? 'correct' : 'wrong_' + i;
+        html += '<p><label><input type="radio" name="comp_check" value="' + val + '"/> ' + opt + '</label></p>';
+      });
+      $("#comp_check_options").html(html);
+    },
+
+    back_to_instructions: function() {
+      exp.back();
+    },
+
+    submit_check: function() {
+      var selected = $('input[name="comp_check"]:checked').val();
+      $("#comp_check_error").hide();
+      $("#comp_check_no_selection").hide();
+
+      if (selected === undefined) {
+        $("#comp_check_no_selection").show();
+        return;
+      }
+
+      if (selected === 'correct') {
+        exp.go();
+      } else {
+        exp.comp_check_attempts++;
+        if (exp.comp_check_attempts >= 2) {
+          $(".slide").hide();
+          $(".progress").hide();
+          $("#failed_check_overlay").show();
+        } else {
+          $("#comp_check_error").show();
+        }
+      }
+    }
+  });
+
   slides.trial = slide({
     name: "trial",
     present: exp.all_stims,
@@ -181,6 +238,7 @@ function make_slides(f) {
 
 function init() {
   exp.data_trials = [];
+  exp.comp_check_attempts = 0;
 
   // Integrity tracking
   exp.tab_switches = 0;
@@ -280,7 +338,7 @@ function init() {
     screenUW: exp.width
   };
 
-  exp.structure = ["i0", "consent", "instructions", "trial", "subj_info", "thanks"];
+  exp.structure = ["i0", "consent", "instructions", "comprehension_check", "trial", "subj_info", "thanks"];
 
   exp.slides = make_slides(exp);
 

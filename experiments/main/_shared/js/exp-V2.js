@@ -59,6 +59,11 @@ make_exp = function() {
     }
   };
 
+  f.back = function() {
+    this.slideIndex -= 2;
+    this.go();
+  };
+
   f.phase = 0; //out of all the trials, what number are we on?
   return f;
 }
