@@ -192,6 +192,9 @@ function make_slides(f) {
 
   slides.subj_info = slide({
     name: "subj_info",
+    start: function() {
+      exp.integrity_active = false;
+    },
     button_submit: function(e) {
       var raceData = [];
       var chks = document.getElementById("checkboxes").getElementsByTagName("INPUT");
