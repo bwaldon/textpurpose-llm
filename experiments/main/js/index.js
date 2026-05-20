@@ -38,8 +38,8 @@ function make_slides(f) {
         $("#instructions_q2_item").html(
           "<b>Your prediction about AI chatbots:</b> After giving your own answer, you will be asked: " +
           "what answer will the <em>majority of AI chatbots</em> give to the same question? " +
-          "We will ask three chatbots &mdash; <em>Claude</em>, <em>ChatGPT</em>, and <em>Gemini</em> &mdash; and use the majority answer. " +
           "Answer <b>YES</b> or <b>NO</b>." +
+          "<br><br> We will ask three chatbots &mdash; <b>ChatGPT</b> (OpenAI's <i>GPT-4.1</i> model), <b>Claude</b> (Anthropic's <i>Claude Sonnet</i> model), and <b>Gemini</b> (Google's <i>Gemini 2.5 Flash</i> model) and use the majority answer. <br><br> These models were each released within the last 12 to 18 months." +
           bonusText
         );
       }
