@@ -25,7 +25,7 @@ function make_slides(f) {
     name: "instructions",
     start: function() {
       var bonusText = showBonus
-        ? " As a bonus, you will earn an extra <b>$0.XX</b> if you answer this question correctly on at least 6 out of 8 trials."
+        ? " As a bonus, you will earn an extra <b>$0.50</b> if you answer this question correctly on at least 6 out of 8 trials."
         : "";
       if (exp.prediction_condition === 'human') {
         $("#instructions_q2_item").html(
