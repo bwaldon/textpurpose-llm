@@ -54,6 +54,7 @@ rows <- lapply(seq_along(json_files), function(i) {
       survey_affiliation      = subj$affiliation,
       survey_race             = subj$race,
       survey_legaltraining    = subj$legaltraining,
+      survey_ai_familiarity   = subj$ai_familiarity,
       survey_comments         = subj$comments,
       survey_problems         = subj$problems,
       stringsAsFactors        = FALSE
@@ -67,3 +68,17 @@ df <- do.call(rbind, rows)
 
 write.csv(df, output_path, row.names = FALSE)
 message("Saved ", nrow(df), " rows to ", output_path)
+
+# Save prolific_id <-> anonymized_id mapping for bonus assignment
+deanon_dir <- file.path(dirname(raw_data_dir), "deanonymize")
+dir.create(deanon_dir, showWarnings = FALSE, recursive = TRUE)
+
+deanon_df <- data.frame(
+  prolific_id   = tools::file_path_sans_ext(basename(json_files)),
+  anonymized_id = seq_along(json_files),
+  stringsAsFactors = FALSE
+)
+
+deanon_path <- file.path(deanon_dir, "id_mapping.csv")
+write.csv(deanon_df, deanon_path, row.names = FALSE)
+message("Saved ", nrow(deanon_df), " rows to ", deanon_path)

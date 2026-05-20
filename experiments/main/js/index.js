@@ -153,6 +153,7 @@ function make_slides(f) {
         affiliation: $("#affiliation").val(),
         race: raceData.join(", "),
         legaltraining: $("#legaltraining").val(),
+        ai_familiarity: $("#ai_familiarity").val(),
         comments: $("#comments").val(),
         problems: $("#problems").val()
       };
