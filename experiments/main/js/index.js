@@ -123,8 +123,10 @@ function make_slides(f) {
       // Show the prediction question text based on condition
       if (exp.prediction_condition === 'human') {
         $("#q2_text").html("What answer will the majority of other experiment participants give to the above question?");
+        $("#q2_bonus_note").html("Your guesses about other participants' responses determine your bonus payment.");
       } else {
         $("#q2_text").html("What answer will the majority of AI chatbots (Claude, ChatGPT, and Gemini) give to the above question?");
+        $("#q2_bonus_note").html("Your guesses about AI chatbots' responses determine your bonus payment.");
       }
 
       // Reset radio buttons
