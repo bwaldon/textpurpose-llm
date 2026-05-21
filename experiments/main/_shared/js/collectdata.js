@@ -52,7 +52,7 @@ var collectdata = {
     if ($("#thanks").length > 0 && $("#uploading-text").length == 0) {
       $("#thanks").html(
         '<p class="big" id="uploading-text">Uploading data... Please don\'t close this window!</p>' +
-        '<p class="big" id="thanks-text">Thanks for your time! Your completion code is: <strong> C618LEWI </strong></p>'
+        '<p class="big" id="thanks-text">Thanks for your time! Your completion code is: <strong> CWHCXC8K </strong></p>'
       );
     }
     $("#uploading-text").show();
