@@ -61,6 +61,7 @@ make_exp = function() {
 
   f.back = function() {
     this.slideIndex -= 2;
+    this.phase -= 2;
     this.go();
   };
 
