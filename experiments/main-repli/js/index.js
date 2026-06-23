@@ -24,31 +24,43 @@ function make_slides(f) {
   slides.instructions = slide({
     name: "instructions",
     start: function() {
-      var bonusText = showBonus
-        ? " As a bonus, you will earn an extra <b>$0.50</b> if you answer this question correctly on at least 6 out of 8 trials."
-        : "";
+      var bonusText;
+      if (exp.condition === 'individual-judgment') {
+        bonusText = "";
+      } else if (exp.condition === 'coordination') {
+        bonusText = showBonus
+          ? " As a bonus, you will earn an extra <b>$0.50</b> if you and your partner agree on at least 6 out of 8 decisions."
+          : "";
+      } else {
+        bonusText = showBonus
+          ? " As a bonus, you will earn an extra <b>$0.50</b> if you answer this question correctly on at least 6 out of 8 trials."
+          : "";
+      }
 
+      var instructions;
       if (exp.condition === 'llm-consensus') {
-        $("#instructions_main").html(
-          "<p>In this study, you will read a series of short scenarios. Each scenario describes a rule that was established for a specific reason, along with a description of what one person did.</p>" +
-          "<p>For each scenario, you will answer <b>one question</b>:</p>" +
-          "<ul><li><b>Your prediction about AI chatbots:</b> What answer will the <em>majority of AI chatbots</em> give to the question of whether the person violated the rule? Answer <b>YES</b> or <b>NO</b>." + bonusText + "</li></ul>" +
-          "<p>We will ask three chatbots &mdash; <b>ChatGPT</b> (OpenAI's <i>GPT-4.1</i> model), <b>Claude</b> (Anthropic's <i>Claude Sonnet</i> model), and <b>Gemini</b> (Google's <i>Gemini 2.5 Flash</i> model) and use the majority answer. These models were each released within the last 12 to 18 months.</p>" +
-          "<p>Please read each scenario carefully before responding.</p>"
-        );
+        instructions =
+          "<p>For each scenario, <em>three AI chatbots</em> will be asked to evaluate whether the person violated the rule &mdash; answering YES or NO. Your task is to predict what answer the <em>majority of those chatbots</em> will give.</p>" +
+          "<p>" + bonusText + "</p>" +
+          "<p>We will ask three chatbots &mdash; <b>ChatGPT</b> (OpenAI's <i>GPT-4.1</i> model), <b>Claude</b> (Anthropic's <i>Claude Sonnet</i> model), and <b>Gemini</b> (Google's <i>Gemini 2.5 Flash</i> model) and use the majority answer. These models were each released within the last 12 to 18 months.</p>"
       } else if (exp.condition === 'human-consensus') {
-        $("#instructions_main").html(
-          "<p>In this study, you will read a series of short scenarios. Each scenario describes a rule that was established for a specific reason, along with a description of what one person did.</p>" +
-          "<p>For each scenario, you will answer <b>one question</b>:</p>" +
-          "<ul><li><b>Your prediction about others:</b> What answer will the <em>majority of other experiment participants</em> give to the question of whether the person violated the rule? Answer <b>YES</b> or <b>NO</b>." + bonusText + "</li></ul>" +
-          "<p>Please read each scenario carefully before responding.</p>"
-        );
+        instructions =
+          "<p>For each scenario, a <em>separate group</em> of experiment participants will be asked for their <em>personal opinion</em> on whether the person violated the rule &mdash; answering YES or NO. Your task is to predict what answer the <em>majority of that separate group</em> will give.</p>" +
+          "<p>" + bonusText + "</p>"
       } else if (exp.condition === 'individual-judgment') {
-        $("#instructions_main").html("Individual judgment condition -- instructions go here");
+        instructions =
+          "<p>For each scenario, you will be asked to share your <em>personal opinion</em> on whether the person violated the rule &mdash; answering YES or NO.</p>" +
+          "<p>" + bonusText + "</p>"
       } else {
         // coordination
-        $("#instructions_main").html("Coordination condition -- instructions go here");
+        instructions =
+          "<p>You have been paired with another participant. For each scenario, both of you will be asked to make a decision on whether the person violated the rule &mdash; answering YES or NO. You must try to reach the <em>same decision as your partner</em> on each case, <em>without communicating with each other</em>.</p>" +
+          "<p>" + bonusText + "</p>"
       }
+      $("#instructions_main").html(
+        "<p>In this study, you will read a series of short scenarios. Each scenario describes a rule that was established for a specific reason, along with a description of what one person did.</p>" +
+        instructions + 
+        "<p>Please read each scenario carefully before responding.</p>");
     },
     button: function() {
       exp.tab_switches = 0;
@@ -138,7 +150,7 @@ function make_slides(f) {
         questionText = "What answer will the majority of AI chatbots (Claude, ChatGPT, and Gemini) give: did <b>" + stim.name + "</b> violate the rule (YES) or not (NO)?";
         bonusNote = "Your guesses about AI chatbots' responses determine your bonus payment.";
       } else if (exp.condition === 'human-consensus') {
-        questionText = "What answer will the majority of other experiment participants give: did <b>" + stim.name + "</b> violate the rule (YES) or not (NO)?";
+        questionText = "Based on their personal opinions, what answer will the majority of a separate group of experiment participants give: did <b>" + stim.name + "</b> violate the rule (YES) or not (NO)?";
         bonusNote = "Your guesses about other participants' responses determine your bonus payment.";
       } else if (exp.condition === 'individual-judgment') {
         questionText = "Make a decision: did <b>" + stim.name + "</b> violate the rule (YES) or not (NO)?";
