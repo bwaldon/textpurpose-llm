@@ -44,10 +44,10 @@ function make_slides(f) {
           "<p>Please read each scenario carefully before responding.</p>"
         );
       } else if (exp.condition === 'individual-judgment') {
-        $("#instructions_main").html("Instructions go here");
+        $("#instructions_main").html("Individual judgment condition -- instructions go here");
       } else {
         // coordination
-        $("#instructions_main").html("Instructions go here");
+        $("#instructions_main").html("Coordination condition -- instructions go here");
       }
     },
     button: function() {
