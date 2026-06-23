@@ -288,15 +288,22 @@ function init() {
   if (debugMode) $("#debug_overlay").show();
 
   // Between-subjects condition assignment (4 equal groups)
-  var condRand = Math.random();
-  if (condRand < 0.25) {
-    exp.condition = 'llm-consensus';
-  } else if (condRand < 0.5) {
-    exp.condition = 'human-consensus';
-  } else if (condRand < 0.75) {
-    exp.condition = 'individual-judgment';
+  // Override with ?condition=<name> for manual testing
+  var validConditions = ['llm-consensus', 'human-consensus', 'individual-judgment', 'coordination'];
+  var conditionParam = urlParams.get('condition');
+  if (validConditions.indexOf(conditionParam) !== -1) {
+    exp.condition = conditionParam;
   } else {
-    exp.condition = 'coordination';
+    var condRand = Math.random();
+    if (condRand < 0.25) {
+      exp.condition = 'llm-consensus';
+    } else if (condRand < 0.5) {
+      exp.condition = 'human-consensus';
+    } else if (condRand < 0.75) {
+      exp.condition = 'individual-judgment';
+    } else {
+      exp.condition = 'coordination';
+    }
   }
 
   // Build one trial per scenario with balanced conditions
