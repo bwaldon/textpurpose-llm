@@ -1,0 +1,279 @@
+<html>
+
+<head>
+    <title>Rule interpretation experiment</title>
+
+    <!-- external general utilities -->
+    <script src="./_shared/js/jquery-1.11.1.min.js "></script>
+    <script src="./_shared/full-projects/jquery-ui/jquery-ui.min.js"></script>
+    <script src="./_shared/js/underscore-min.js"></script>
+    <script src="./_shared/js/collectdata.js"></script>
+
+    <!-- cocolab experiment logic -->
+    <script src="./_shared/js/exp-V2.js"></script>
+    <script src="./_shared/js/stream-V2.js"></script>
+
+    <!-- cocolab general utilities -->
+    <script src="./_shared/js/browserCheck.js"></script>
+    <script src="./_shared/js/utils.js"></script>
+
+    <!-- CSS -->
+    <link href="./_shared/full-projects/jquery-ui/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
+    <link href="./_shared/css/cocolab-style.css" rel="stylesheet" type="text/css"/>
+    <link href="./css/local-style.css" rel="stylesheet" type="text/css"/>
+
+    <!-- experiment files -->
+    <script src="./js/stimuli.js"></script>
+    <script src="./js/index.js"></script>
+</head>
+
+<body onload="init();">
+  <noscript>This task requires JavaScript.</noscript>
+
+  <div id="debug_overlay" style="display:none; position:fixed; top:8px; left:8px; z-index:9999; background:rgba(0,0,0,0.75); color:#fff; font-family:monospace; font-size:13px; padding:6px 10px; border-radius:4px; pointer-events:none;">
+    Tab switches: <span id="debug_tab_switches">0</span><br>
+    Cursor departs: <span id="debug_cursor_departs">0</span>
+  </div>
+
+  <!-- Warning toast (shown when approaching the integrity threshold) -->
+  <div id="warning_toast" style="display:none; position:fixed; top:16px; left:50%; transform:translateX(-50%); z-index:10000; background:#fff3cd; color:#856404; border:2px solid #ffc107; padding:14px 22px; border-radius:6px; font-size:15px; max-width:520px; width:90%; text-align:center; box-shadow:0 2px 10px rgba(0,0,0,0.2);"></div>
+
+  <!-- Return-study overlay (shown when threshold is exceeded) -->
+  <div id="return_study_overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:#fff; z-index:99999; overflow-y:auto;">
+    <div style="max-width:600px; margin:80px auto; padding:30px; text-align:center; font-family:Arial, Helvetica, sans-serif;">
+      <h2 style="color:#c00;">Please return this study.</h2>
+      <p>You have left the study window (by switching browser tabs or moving your cursor outside the browser) more than 4 times. As stated in the instructions, participants who do so will be asked to return the study.</p>
+      <p>Please return this submission via your <strong>Prolific</strong> dashboard.</p>
+      <p><strong>DO NOT SUBMIT FOR APPROVAL.</strong> To avoid adversely affecting your approval rate, you must return the study.</p>
+      <p>You may message the study administrator with the message <em>"BROWSER WINDOW"</em> to receive a partial payment for your time. (Please allow up to 24 hours for processing.)</p>
+    </div>
+  </div>
+
+  <!-- SLIDE: Welcome / start -->
+  <div class="slide" id="i0">
+    <br><br>
+    <p id="instruct-text">
+      Welcome! In this study, we are interested in how people interpret rules and whether they think someone has violated a rule.
+      You will read a series of short scenarios and answer a few questions about each. Thanks for participating!
+    </p>
+    <button id="start_button" type="button">Continue</button>
+    <p id="mustaccept" style="color:red; display:none;">Please accept the HIT before starting.</p>
+  </div>
+
+  <!-- SLIDE: Consent form -->
+  <div class="slide" id="consent" style="text-align:left;">
+    <br>
+    <h2>Consent Form</h2>
+    <p>Please consider the following information before agreeing to participate: <br><br>
+      • In this experiment you will read a few short stories and answer brief questions about them. The entire study should take approximately 6 minutes to complete. <br> 
+      • You must be at least 18 years of age to participate in this study. <br>
+      • There are no risks or personal benefits of any kind involved in this study (other than your remuneration). <br>
+      • You will be paid for your participation at the posted rate (provided that you complete the whole study). <br>
+      • Your participation in this study will remain confidential. The researchers will not record or analyse any data allowing for your identification. <br> 
+      • This is an academic study and the researchers are not going to use obtained results for any commercial purposes. <br>
+      • Participation in this study is voluntary. At any point, you may refuse to participate further without providing any explanation. <br>
+      • The study is part of a research project conducted at the Interdisciplinary Centre for Ethics at the Jagiellonian University. Should you have any questions or wish to learn more about this study and its results, please reach out to Piotr Bystranowski at piotr.bystranowski@uj.edu.pl <br>
+      • By clicking the "I consent &mdash; continue" button below, and proceeding to the study task you indicate that you have read this form and consented to participate in accordance with the above conditions. <br>
+    </p>
+    <div style="text-align:center;"><button type="button" onclick="_s.button()">I consent &mdash; continue</button></div>
+  </div>
+
+  <!-- Failed comprehension check overlay -->
+  <div id="failed_check_overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:#fff; z-index:99999; overflow-y:auto;">
+    <div style="max-width:600px; margin:80px auto; padding:30px; text-align:center; font-family:Arial, Helvetica, sans-serif;">
+      <h2 style="color:#c00;">Please return this study.</h2>
+      <p>You did not pass the comprehension check after two attempts. We require participants to understand the instructions before proceeding.</p>
+      <p>Please return this submission via your <strong>Prolific</strong> dashboard.</p>
+      <p><strong>DO NOT SUBMIT FOR APPROVAL.</strong> To avoid adversely affecting your approval rate, you must return the study.</p>
+      <p>You may message the study administrator with the message <em>"COMP CHECK"</em> to receive a partial payment for your time. (Please allow up to 24 hours for processing.)</p>
+    </div>
+  </div>
+
+  <!-- SLIDE: Instructions -->
+  <div class="slide" id="instructions">
+    <br>
+    <h2>Instructions</h2>
+    <div id="instructions_main"></div>
+    <p><b>Important:</b> This study records mouse movements and tab switching to ensure you do not consult external sources during the task. <b><span style="color:red;">If your cursor leaves the browser window and/or you switch tabs more than 4 times during the study, you will be asked to return the study.</span></b></p>
+    <div style="text-align:center;"><button type="button" onclick="_s.button()">Continue</button></div>
+  </div>
+
+  <!-- SLIDE: Comprehension check -->
+  <div class="slide" id="comprehension_check">
+    <br>
+    <h2>Comprehension Check</h2>
+    <p>Were you able to understand the instructions on the previous page?<br>
+    If so, please select the statement that best matches the instructions you just read.</p>
+    <div id="comp_check_options" style="text-align:left; margin:15px 0;"></div>
+    <p id="comp_check_error" style="color:red; display:none;">That answer is incorrect. Please try again.</p>
+    <p id="comp_check_no_selection" style="color:red; display:none;">Please select an answer before continuing.</p>
+    <div style="text-align:center;">
+      <button type="button" onclick="_s.back_to_instructions()">Re-read instructions</button>
+      &nbsp;&nbsp;
+      <button type="button" onclick="_s.submit_check()">Start study</button>
+    </div>
+  </div>
+
+  <!-- SLIDE: Trial -->
+  <div class="slide" id="trial">
+    <br>
+
+    <div id="demoView" style="text-align:left; font-family: Arial, Helvetica, sans-serif;">
+      <font color="red"><b>DEMO VIEW</b></font><br>
+      <div id="demoName"></div>
+      <div id="demoCondition"></div>
+    </div>
+
+    <br>
+
+    <div id="vignette" style="text-align:justify; font-family: Arial, Helvetica, sans-serif; background-color:#faeeca; padding:10px; border:5px solid gray;">
+    </div>
+
+    <hr>
+
+    <table style="font-size:18px; width:100%;">
+
+      <tr>
+        <td>
+          <div id="question_text" style="text-align:left;"></div>
+          <p id="question_bonus_note" style="font-size:14px; font-style:italic; text-align:left; margin-top:10px; margin-bottom:0;"></p>
+          <center><br>
+            <label><input type="radio" name="q1" value="yes"/> YES</label>
+            &nbsp;&nbsp;&nbsp;
+            <label><input type="radio" name="q1" value="no"/> NO</label>
+          </center>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <center>
+            <p id="error_msg" style="color:red; display:none;">Please answer the question before proceeding.</p>
+          </center>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <center>
+            <button onclick="_s.button_continue()">Continue</button>
+          </center>
+        </td>
+      </tr>
+
+    </table>
+  </div>
+
+  <!-- SLIDE: Debrief / subject info -->
+  <div class="slide" id="subj_info">
+    <div class="long_form">
+      <p><p>
+      <div class="subj_info_title">Additional information</div>
+
+      <p>Answering the following questions is optional, but will help us understand your responses in the study.</p>
+
+      <p>Native language: <input type="text" id="language"/><br>
+      <label>(the language(s) spoken at home when you were a child)</label></p>
+
+      <p>What best describes your legal background?
+      <select id="legaltraining">
+        <option value="-1"></option>
+        <option value="0">No formal legal training and/or law school</option>
+        <option value="1">Some formal legal training and/or law school</option>
+        <option value="2">Professional legal degree (such as a JD or LLM)</option>
+        <option value="3">Practicing lawyer</option>
+      </select>
+      </p>
+
+      <p>Did you read the instructions and do you think you did the experiment correctly?<br>
+      <label><input type="radio" name="assess" value="No"/> No</label>
+      <label><input type="radio" name="assess" value="Yes"/> Yes</label>
+      <label><input type="radio" name="assess" value="Confused"/> I was confused</label></p>
+
+      <p>Were there any problems or bugs in the experiment?</p>
+      <textarea id="problems" rows="2" cols="50"></textarea>
+
+      <p>Gender:
+      <select id="gender">
+        <option value=""></option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other/Prefer not to answer</option>
+      </select>
+      </p>
+
+      <p>Age: <input type="text" id="age"/></p>
+
+      <div id="checkboxes">
+      <p>What is your race/ethnicity? Select all that apply:</p>
+      <ul style="list-style-type:none;" align="center">
+        <li><label><input name="raceX" type="checkbox" id="Asian" value="Asian"/> Asian</label></li>
+        <li><label><input name="raceX" type="checkbox" id="AA" value="AA"/> Black or African American</label></li>
+        <li><label><input name="raceX" type="checkbox" id="Latino" value="Latino"/> Hispanic or Latino</label></li>
+        <li><label><input name="raceX" type="checkbox" id="PI" value="PI"/> Native Hawaiian or Other Pacific Islander</label></li>
+        <li><label><input name="raceX" type="checkbox" id="White" value="White"/> White</label></li>
+      </ul>
+      </div>
+
+      <p>Level of Education:
+      <select id="education">
+        <option value="-1"></option>
+        <option value="0">Some High School</option>
+        <option value="1">Graduated High School</option>
+        <option value="2">Some College</option>
+        <option value="3">Graduated College</option>
+        <option value="4">Hold a higher degree</option>
+      </select>
+      </p>
+
+      <p>Which of the following options do you feel your political beliefs most closely align with?</p>
+      <select id="affiliation">
+        <option value="-1"></option>
+        <option value="0">Liberal Democrat (most liberal)</option>
+        <option value="1">Democratic-leaning Independent</option>
+        <option value="2">Moderate Democrat</option>
+        <option value="3">Independent (most neutral)</option>
+        <option value="4">Moderate Republican</option>
+        <option value="5">Republican-leaning Independent</option>
+        <option value="6">Conservative Republican (most conservative)</option>
+      </select>
+
+      <p>How familiar are you with AI chatbot platforms such as ChatGPT, Claude, and Gemini?
+      <select id="ai_familiarity">
+        <option value="-1"></option>
+        <option value="0">Not at all familiar</option>
+        <option value="1">Not very familiar</option>
+        <option value="2">Moderately familiar</option>
+        <option value="3">Highly familiar</option>
+      </select>
+      </p>
+
+      <p>Did you enjoy the experiment?</p>
+      <select id="enjoyment">
+        <option value="-1"></option>
+        <option value="0">No.</option>
+        <option value="1">It was fine.</option>
+        <option value="2">Yes.</option>
+      </select>
+
+      <p>We would be interested in any comments you have about this experiment. Please type them here:</p>
+      <textarea id="comments" rows="3" cols="50"></textarea>
+      <br/><p>
+      <button onclick="_s.button_submit()">Submit</button>
+    </div>
+  </div>
+
+  <div id="thanks" class="slide js">
+    <p class="big">Thanks for your time!</p>
+    Please do not close this window...
+  </div>
+
+  <div class="progress">
+    <span>Progress:</span>
+    <div class="bar-wrapper">
+      <div class="bar" width="0%"></div>
+    </div>
+  </div>
+
+</body>
+</html>
