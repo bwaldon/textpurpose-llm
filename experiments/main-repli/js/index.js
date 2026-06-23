@@ -73,10 +73,10 @@ function make_slides(f) {
       } else if (exp.condition === 'human-consensus') {
         correctText = "I will be asked how other people would interpret rules.";
       } else if (exp.condition === 'individual-judgment') {
-        correctText = "I will be asked whether I think each person violated the rule.";
+        correctText = "I will be asked about my own interpretation of rules.";
       } else {
         // coordination
-        correctText = "I have to decide the cases in the same way as a second player.";
+        correctText = "I have to interpret rules in the same way as a second player.";
       }
 
       var options = _.shuffle([
@@ -146,7 +146,7 @@ function make_slides(f) {
       } else {
         // coordination
         questionText = "Make a decision: did <b>" + stim.name + "</b> violate the rule (YES) or not (NO)?";
-        bonusNote = "Remember: you and your partner must try to reach the same decision.";
+        bonusNote = "Your bonus payment is determined by whether your answers match those of your partner.";
       }
 
       $("#question_text").html(questionText);
